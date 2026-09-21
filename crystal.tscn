@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bt51nh8yuy72c"]
+
+[ext_resource type="Texture2D" uid="uid://dh0x4wrvswvgc" path="res://Assets/crystal.png" id="1_200vn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
+size = Vector2(17, 23)
+
+[node name="Node2D" type="Node2D" unique_id=1888349420]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517364143]
+texture = ExtResource("1_200vn")
+hframes = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1423362606]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_aol0e")
+one_way_collision = true
+debug_color = Color(0.57634217, 0.38607997, 1, 0.41960785)
