@@ -1,6 +1,6 @@
 extends CollisionShape2D
 
-@export var drone: Node2D
+@export var player: Node2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
