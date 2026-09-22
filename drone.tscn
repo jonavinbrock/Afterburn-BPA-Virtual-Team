@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://chkxrwuyp21oa"]
 
-[ext_resource type="Texture2D" uid="uid://bdhasdewbb1i7" path="res://Assets/Drone/drone.png" id="1_uvgqj"]
+[ext_resource type="Script" uid="uid://d10h1dilt3btu" path="res://colls.gd" id="1_puw62"]
+[ext_resource type="Texture2D" uid="uid://bdhasdewbb1i7" path="res://Assets/drone.png" id="1_uvgqj"]
+[ext_resource type="Script" uid="uid://p0rov006a7qi" path="res://drone.gd" id="3_30i2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x33w8"]
 size = Vector2(34, 37)
 
-[node name="Node2D" type="Node2D" unique_id=1890139546]
+[node name="Drone" type="Node2D" unique_id=1890139546]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=444326025]
-texture = ExtResource("1_uvgqj")
-hframes = 6
+[node name="DroneBody" type="CharacterBody2D" parent="." unique_id=784993765]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244277524]
+[node name="DroneCollision" type="CollisionShape2D" parent="DroneBody" unique_id=244277524]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_x33w8")
-one_way_collision = true
 debug_color = Color(0.91745776, 0.26664242, 0.27788332, 0.41960785)
+script = ExtResource("1_puw62")
+
+[node name="DroneSprite" type="Sprite2D" parent="DroneBody" unique_id=444326025]
+texture = ExtResource("1_uvgqj")
+hframes = 6
+script = ExtResource("3_30i2v")
