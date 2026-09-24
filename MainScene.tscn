@@ -1062,4 +1062,4 @@ tile_set = SubResource("TileSet_vxxdm")
 position = Vector2(199, -68)
 
 [node name="Node2D2" parent="." unique_id=634905737 instance=ExtResource("3_rpqi1")]
-position = Vector2(201, 29)
+position = Vector2(214, 27)
