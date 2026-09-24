@@ -1059,7 +1059,7 @@ tile_map_data = PackedByteArray("AAAAAAYAAAAEAAkAAAAAAAcAAAAEAAoAAAAAAAgAAAAEAAs
 tile_set = SubResource("TileSet_vxxdm")
 
 [node name="Node2D" parent="." unique_id=1890139546 instance=ExtResource("2_x4av3")]
-position = Vector2(199, -68)
+position = Vector2(200, -20)
 
 [node name="Node2D2" parent="." unique_id=634905737 instance=ExtResource("3_rpqi1")]
-position = Vector2(201, 29)
+position = Vector2(200, 30)

@@ -7,6 +7,7 @@
 size = Vector2(100, 128)
 
 [node name="Node2D" type="Node2D" unique_id=634905737]
+scale = Vector2(0.35, 0.35)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=253557169]
 script = ExtResource("1_esaic")
