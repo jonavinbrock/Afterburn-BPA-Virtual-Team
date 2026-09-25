@@ -3,25 +3,21 @@
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_esaic"]
 [ext_resource type="Texture2D" uid="uid://oqee3ny2b5sv" path="res://New Piskel-1.png (1).png" id="2_esaic"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
-size = Vector2(17, 34)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6yky"]
+size = Vector2(17.5, 34)
 
 [node name="Node2D" type="Node2D" unique_id=634905737]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=253557169]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1676346940]
 script = ExtResource("1_esaic")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=543569570]
-position = Vector2(20, -1)
-scale = Vector2(0.5703125, 0.5703125)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/Sprite2D" unique_id=1176850694]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1957897906]
-position = Vector2(-13.5, -2)
-shape = SubResource("RectangleShape2D_aol0e")
-one_way_collision_direction = Vector2(0, -1)
-
-[node name="NewPiskel1_png(1)" type="Sprite2D" parent="." unique_id=1004175333]
+[node name="NewPiskel1_png(1)" type="Sprite2D" parent="CharacterBody2D" unique_id=1004175333]
 position = Vector2(-13, -2)
 texture = ExtResource("2_esaic")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=991424585]
+position = Vector2(-13, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1370633485]
+position = Vector2(-13.25, -2)
+shape = SubResource("RectangleShape2D_e6yky")
