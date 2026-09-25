@@ -12,6 +12,7 @@ size = Vector2(17.5, 34)
 script = ExtResource("1_esaic")
 
 [node name="NewPiskel1_png(1)" type="Sprite2D" parent="CharacterBody2D" unique_id=1004175333]
+<<<<<<< HEAD
 position = Vector2(-13, -2)
 texture = ExtResource("2_esaic")
 
@@ -21,3 +22,16 @@ position = Vector2(-13, -2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1370633485]
 position = Vector2(-13.25, -2)
 shape = SubResource("RectangleShape2D_e6yky")
+=======
+texture = ExtResource("2_esaic")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/NewPiskel1_png(1)" unique_id=1176850694]
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(0.5703125, 0.5703125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1957897906]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_aol0e")
+one_way_collision_direction = Vector2(0, -1)
+debug_color = Color(0.44705883, 0, 0.9137255, 0.41960785)
+>>>>>>> ef3cb02d768f3552726983ea5049cf02d794485f
