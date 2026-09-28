@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdbh555du7ygi"
-path="res://.godot/imported/New Piskel-1.png.png-5bd417022c4f3e30e3bd272836ced644.ctex"
+uid="uid://tmnqnypdt3tg"
+path="res://.godot/imported/gasgasgrass.png-98482488da22d027b28d97099b277a82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-5bd417022c4f3e30e3bd272836ced644.ctex"]
+source_file="res://Assets/gasgasgrass.png"
+dest_files=["res://.godot/imported/gasgasgrass.png-98482488da22d027b28d97099b277a82.ctex"]
 
 [params]
 
