@@ -12,6 +12,7 @@ size = Vector2(13, 15)
 script = ExtResource("1_esaic")
 
 [node name="NewPiskel1_png(1)" type="Sprite2D" parent="CharacterBody2D" unique_id=1004175333]
+texture_filter = 1
 texture = ExtResource("2_esaic")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D/NewPiskel1_png(1)" unique_id=1176850694]
