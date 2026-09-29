@@ -4,20 +4,24 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
-const grid_size = 6
+const grid_size = 21
+
+func die():
+	pass
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	position.x += direction * grid_size
-	position.x = round(position.x)
+	if (Input.is_action_just_pressed("ui_left")):
+		position.x -= grid_size
+	if (Input.is_action_just_pressed("ui_right")):
+		position.x += grid_size
+	if (Input.is_action_just_pressed("ui_accept")):
+		position.y -= grid_size
 	move_and_slide()
