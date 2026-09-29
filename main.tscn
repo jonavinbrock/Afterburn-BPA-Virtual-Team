@@ -148,7 +148,7 @@ tile_map_data = PackedByteArray("AAAQAAEAAAAAAAAAAAAQAAIAAAAAAAEAAAAQAAMAAAAAAAI
 tile_set = SubResource("TileSet_x33w8")
 
 [node name="Drone" parent="." unique_id=1890139546 instance=ExtResource("1_h2yge")]
-position = Vector2(96, 34)
+position = Vector2(125, 33)
 
 [node name="Inventor" parent="." unique_id=634905737 instance=ExtResource("3_1bvp3")]
 position = Vector2(35, 524)
