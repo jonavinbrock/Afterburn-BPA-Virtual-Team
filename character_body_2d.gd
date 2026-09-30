@@ -4,17 +4,13 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
-const grid_size = 21
+const grid_size = 32
 
 func die():
 	pass
 	
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	
-	
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
