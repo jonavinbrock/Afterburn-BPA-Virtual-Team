@@ -11,6 +11,7 @@ atlas = ExtResource("2_esaic")
 [node name="Node2D" type="Node2D" unique_id=941033932]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092651769]
+texture_filter = 1
 texture = SubResource("AtlasTexture_vfv0m")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=79423478]
