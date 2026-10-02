@@ -2,27 +2,31 @@
 
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_esaic"]
 [ext_resource type="Script" uid="uid://bfxbt1mgxvkra" path="res://sprite_2d.gd" id="2_c5qu7"]
-[ext_resource type="Texture2D" uid="uid://oqee3ny2b5sv" path="res://New Piskel-1.png (1).png" id="2_esaic"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vfv0m"]
-atlas = ExtResource("2_esaic")
+[ext_resource type="Texture2D" uid="uid://kiltuujlouqt" path="res://Assets/no_fuel_player.png" id="2_oyhev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxdm"]
 
-[node name="Node2D" type="Node2D" unique_id=941033932]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092651769]
-texture_filter = 1
-texture = SubResource("AtlasTexture_vfv0m")
-script = ExtResource("2_c5qu7")
+[node name="Node2D" type="Node2D" unique_id=941033932]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=79423478]
 motion_mode = 1
 script = ExtResource("1_esaic")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2079492355]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2092651769]
+texture_filter = 1
+texture = ExtResource("2_oyhev")
+script = ExtResource("2_c5qu7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=751973705]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=751973705]
 shape = SubResource("RectangleShape2D_vxxdm")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=2079492355]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1171319712]
+shape = SubResource("RectangleShape2D_aol0e")
+
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1716593858]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=147824320]
