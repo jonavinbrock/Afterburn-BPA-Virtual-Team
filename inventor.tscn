@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://covmcarn2or2b"]
 
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_esaic"]
+[ext_resource type="Script" uid="uid://bfxbt1mgxvkra" path="res://sprite_2d.gd" id="2_c5qu7"]
 [ext_resource type="Texture2D" uid="uid://oqee3ny2b5sv" path="res://New Piskel-1.png (1).png" id="2_esaic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vfv0m"]
@@ -11,7 +12,9 @@ atlas = ExtResource("2_esaic")
 [node name="Node2D" type="Node2D" unique_id=941033932]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2092651769]
+texture_filter = 1
 texture = SubResource("AtlasTexture_vfv0m")
+script = ExtResource("2_c5qu7")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=79423478]
 motion_mode = 1
