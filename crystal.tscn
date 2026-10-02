@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bt51nh8yuy72c"]
 
-[ext_resource type="Texture2D" uid="uid://dh0x4wrvswvgc" path="res://Assets/Cars/crystal.png" id="1_200vn"]
+[ext_resource type="Texture2D" uid="uid://dh0x4wrvswvgc" path="res://Assets/crystal.png" id="1_200vn"]
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]

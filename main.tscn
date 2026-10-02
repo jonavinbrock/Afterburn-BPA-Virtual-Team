@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bfcyeymivdky3" path="res://Assets/road.trev.png" id="2_lquwl"]
 [ext_resource type="Texture2D" uid="uid://cn723ytyufnxp" path="res://Assets/grass.png" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://dn0xtrabtv1yo" path="res://Assets/Cars/blue_car.png" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://dh0x4wrvswvgc" path="res://Assets/crystal.png" id="5_lquwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("1_1bvp3")
@@ -160,6 +161,19 @@ sources/3 = SubResource("TileSetAtlasSource_efxa6")
 [node name="Node2D" type="Node2D" unique_id=1482708781]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1340826863]
+scale = Vector2(516.28613, 578.3167)
 tile_set = SubResource("TileSet_44qoc")
 format = 2
-layer_0/tile_data = PackedInt32Array(65538, 65536, 1, 131074, 65536, 2, 65539, 131072, 1, 131075, 131072, 2, 196610, 65536, 1, 262146, 65536, 2, 196611, 65536, 1, 262147, 65536, 2, 327682, 65536, 1, 393218, 65536, 2, 327683, 131072, 1, 393219, 131072, 2, 196612, 131072, 1, 262148, 131072, 2, 196613, 65536, 1, 262149, 65536, 2, 196614, 131072, 1, 262150, 131072, 2, 196615, 65536, 1, 262151, 65536, 2, 196616, 131072, 1, 262152, 131072, 2, 65543, 65536, 1, 131079, 65536, 2, 65544, 131072, 1, 131080, 131072, 2, 327687, 65536, 1, 393223, 65536, 2, 327688, 131072, 1, 393224, 131072, 2, 12, 65536, 1, 65548, 65536, 2, 13, 131072, 1, 65549, 131072, 2, 196620, 65536, 1, 262156, 65536, 2, 196621, 131072, 1, 262157, 131072, 2, 327692, 65536, 1, 393228, 65536, 2, 327693, 131072, 1, 393229, 131072, 2)
+layer_0/tile_data = PackedInt32Array(65538, 65536, 1, 131074, 65536, 2, 65539, 131072, 1, 131075, 131072, 2, 196610, 65536, 1, 262146, 65536, 2, 196611, 65536, 1, 262147, 65536, 2, 327682, 65536, 1, 393218, 65536, 2, 327683, 131072, 1, 393219, 131072, 2, 196612, 131072, 1, 262148, 131072, 2, 196613, 65536, 1, 262149, 65536, 2, 196614, 131072, 1, 262150, 131072, 2, 196615, 65536, 1, 262151, 65536, 2, 196616, 131072, 1, 262152, 131072, 2, 65543, 65536, 1, 131079, 65536, 2, 65544, 131072, 1, 131080, 131072, 2, 327687, 65536, 1, 393223, 65536, 2, 327688, 131072, 1, 393224, 131072, 2, 12, 65536, 1, 65548, 65536, 2, 65549, 131072, 2, 196620, 65536, 1, 262156, 65536, 2, 196621, 131072, 1, 262157, 131072, 2, 327692, 65536, 1, 393228, 65536, 2, 327693, 131072, 1, 393229, 131072, 2, 13, 131072, 1, 196623, 65539, 1, 262159, 65539, 2, 196624, 131075, 1, 262160, 131075, 2)
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=816684379]
+position = Vector2(1448, 464)
+texture = ExtResource("3_7mycd")
+
+[node name="Road_trev" type="Sprite2D" parent="." unique_id=1416277382]
+position = Vector2(1365, 573)
+texture = ExtResource("2_lquwl")
+
+[node name="Crystal" type="Sprite2D" parent="." unique_id=2504384]
+position = Vector2(1459, 681)
+texture = ExtResource("5_lquwl")
