@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cmctjr7m273d" path="res://Assets/Player/New Piskel-6.png.png" id="7_8lotl"]
 [ext_resource type="Texture2D" uid="uid://c564ibraftuw8" path="res://Assets/Player/New Piskel-7.png.png" id="8_t66ib"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vxxdm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qv4g4"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": ExtResource("2_6gvv3")
 }, {
 "duration": 1.0,
@@ -34,7 +34,7 @@ animations = [{
 "texture": ExtResource("8_t66ib")
 }],
 "loop": 1,
-"name": &"Idle",
+"name": &"Idel",
 "speed": 5.0
 }]
 
@@ -87,13 +87,15 @@ script = ExtResource("1_esaic")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2124330882]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_vxxdm")
-animation = &"Idle"
+sprite_frames = SubResource("SpriteFrames_qv4g4")
+animation = &"Idel"
+autoplay = "Idel"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=751973705]
 shape = SubResource("RectangleShape2D_vxxdm")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=147824320]
+zoom = Vector2(3.5, 3.5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=374552981]
 libraries/ = SubResource("AnimationLibrary_kah5f")
