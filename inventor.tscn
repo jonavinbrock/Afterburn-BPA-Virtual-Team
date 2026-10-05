@@ -1,11 +1,81 @@
 [gd_scene format=3 uid="uid://covmcarn2or2b"]
 
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_esaic"]
-[ext_resource type="Script" uid="uid://bfxbt1mgxvkra" path="res://sprite_2d.gd" id="2_c5qu7"]
-[ext_resource type="Texture2D" uid="uid://kiltuujlouqt" path="res://Assets/no_fuel_player.png" id="2_oyhev"]
-[ext_resource type="Texture2D" uid="uid://oqee3ny2b5sv" path="res://New Piskel-1.png (1).png" id="4_oyhev"]
+[ext_resource type="Texture2D" uid="uid://eveu6k4wd85x" path="res://Assets/Player/New Piskel-1.png.png" id="2_6gvv3"]
+[ext_resource type="Texture2D" uid="uid://ewewbvv1os7b" path="res://Assets/Player/New Piskel-2.png.png" id="3_rd4uf"]
+[ext_resource type="Texture2D" uid="uid://b5fcdngbf4shv" path="res://Assets/Player/New Piskel-3.png.png" id="4_kah5f"]
+[ext_resource type="Texture2D" uid="uid://d4j8yvqxhy88" path="res://Assets/Player/New Piskel-4.png.png" id="5_c0byi"]
+[ext_resource type="Texture2D" uid="uid://d0b1ntspu6ywe" path="res://Assets/Player/New Piskel-5.png.png" id="6_juil2"]
+[ext_resource type="Texture2D" uid="uid://cmctjr7m273d" path="res://Assets/Player/New Piskel-6.png.png" id="7_8lotl"]
+[ext_resource type="Texture2D" uid="uid://c564ibraftuw8" path="res://Assets/Player/New Piskel-7.png.png" id="8_t66ib"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vxxdm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6gvv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rd4uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kah5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c0byi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_juil2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8lotl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t66ib")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxdm"]
+
+[sub_resource type="Animation" id="Animation_6gvv3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rd4uf"]
+resource_name = "help"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.20000005, 0.29999995, 0.4333334, 0.5, 0.5999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kah5f"]
+_data = {
+&"RESET": SubResource("Animation_6gvv3"),
+&"help": SubResource("Animation_rd4uf")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
 
@@ -15,13 +85,18 @@
 motion_mode = 1
 script = ExtResource("1_esaic")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2092651769]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=2124330882]
 texture_filter = 1
-texture = ExtResource("2_oyhev")
-script = ExtResource("2_c5qu7")
+sprite_frames = SubResource("SpriteFrames_vxxdm")
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=751973705]
 shape = SubResource("RectangleShape2D_vxxdm")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=147824320]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=374552981]
+libraries/ = SubResource("AnimationLibrary_kah5f")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2079492355]
 
@@ -29,9 +104,3 @@ shape = SubResource("RectangleShape2D_vxxdm")
 shape = SubResource("RectangleShape2D_aol0e")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1716593858]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=147824320]
-
-[node name="NewPiskel1_png(1)2" type="Sprite2D" parent="." unique_id=884341371]
-position = Vector2(1, -337)
-texture = ExtResource("4_oyhev")
