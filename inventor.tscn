@@ -89,6 +89,7 @@ script = ExtResource("1_esaic")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vxxdm")
 animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=751973705]
 shape = SubResource("RectangleShape2D_vxxdm")
