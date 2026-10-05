@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_esaic"]
 [ext_resource type="Script" uid="uid://bfxbt1mgxvkra" path="res://sprite_2d.gd" id="2_c5qu7"]
-[ext_resource type="Texture2D" uid="uid://dwbpw4b354rj0" path="res://Assets/New Piskel (18).png" id="2_oyhev"]
+[ext_resource type="Texture2D" uid="uid://kiltuujlouqt" path="res://Assets/no_fuel_player.png" id="2_oyhev"]
+[ext_resource type="Texture2D" uid="uid://oqee3ny2b5sv" path="res://New Piskel-1.png (1).png" id="4_oyhev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxxdm"]
 
@@ -17,8 +18,6 @@ script = ExtResource("1_esaic")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2092651769]
 texture_filter = 1
 texture = ExtResource("2_oyhev")
-hframes = 7
-frame = 6
 script = ExtResource("2_c5qu7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=751973705]
@@ -32,3 +31,7 @@ shape = SubResource("RectangleShape2D_aol0e")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1716593858]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=147824320]
+
+[node name="NewPiskel1_png(1)2" type="Sprite2D" parent="." unique_id=884341371]
+position = Vector2(1, -337)
+texture = ExtResource("4_oyhev")
