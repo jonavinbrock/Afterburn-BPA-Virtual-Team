@@ -10,10 +10,10 @@
 [node name="Map" parent="." unique_id=1065700438 instance=ExtResource("1_1bvp3")]
 
 [node name="Crystal" parent="." unique_id=1888349420 instance=ExtResource("2_lquwl")]
-position = Vector2(161, 119)
+position = Vector2(189, 132)
 
 [node name="Drone" parent="." unique_id=1890139546 instance=ExtResource("3_7mycd")]
-position = Vector2(351, 27)
+position = Vector2(253, 32)
 
 [node name="Node2D" parent="." unique_id=941033932 instance=ExtResource("4_272bh")]
-position = Vector2(288, 290)
+position = Vector2(293, 292)
