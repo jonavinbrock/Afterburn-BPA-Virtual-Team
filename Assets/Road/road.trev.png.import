@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdhasdewbb1i7"
-path="res://.godot/imported/drone.png-1befcd6caa3b0dfe0c2fd6d003ebcfb7.ctex"
+uid="uid://bfcyeymivdky3"
+path="res://.godot/imported/road.trev.png-fda8642eddc89fbd27d0e2dbb32267a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/drone.png"
-dest_files=["res://.godot/imported/drone.png-1befcd6caa3b0dfe0c2fd6d003ebcfb7.ctex"]
+source_file="res://Assets/Road/road.trev.png"
+dest_files=["res://.godot/imported/road.trev.png-fda8642eddc89fbd27d0e2dbb32267a0.ctex"]
 
 [params]
 

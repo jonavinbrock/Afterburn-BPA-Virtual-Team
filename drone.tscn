@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chkxrwuyp21oa"]
 
 [ext_resource type="Script" uid="uid://d10h1dilt3btu" path="res://colls.gd" id="1_puw62"]
-[ext_resource type="Texture2D" uid="uid://bdhasdewbb1i7" path="res://Assets/drone.png" id="1_uvgqj"]
+[ext_resource type="Texture2D" uid="uid://bdhasdewbb1i7" path="res://Assets/Drone/drone.png" id="1_uvgqj"]
 [ext_resource type="Script" uid="uid://p0rov006a7qi" path="res://drone.gd" id="3_30i2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x33w8"]

@@ -79,7 +79,7 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
 
-[node name="Node2D" type="Node2D" unique_id=941033932]
+[node name="Node2D2" type="Node2D" unique_id=941033932]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=79423478]
 motion_mode = 1
@@ -96,8 +96,8 @@ shape = SubResource("RectangleShape2D_vxxdm")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=147824320]
 texture_filter = 1
-offset = Vector2(0, -65)
-zoom = Vector2(3.5, 3.5)
+offset = Vector2(0, -132.5)
+zoom = Vector2(3.75, 2)
 limit_enabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=374552981]

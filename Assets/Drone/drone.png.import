@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ne8bijyv5f8"
-path="res://.godot/imported/fueled_player.png-5cd5a7fbfba163a9a58ffe5c27e3d21d.ctex"
+uid="uid://bdhasdewbb1i7"
+path="res://.godot/imported/drone.png-b5c148835ef9d2e01836a0918218b4a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fueled_player.png"
-dest_files=["res://.godot/imported/fueled_player.png-5cd5a7fbfba163a9a58ffe5c27e3d21d.ctex"]
+source_file="res://Assets/Drone/drone.png"
+dest_files=["res://.godot/imported/drone.png-b5c148835ef9d2e01836a0918218b4a7.ctex"]
 
 [params]
 

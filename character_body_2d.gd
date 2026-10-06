@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
-const grid_size = 48
+const grid_size = 64
 
 
 func die():
