@@ -96,7 +96,7 @@ shape = SubResource("RectangleShape2D_vxxdm")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=147824320]
 texture_filter = 1
-offset = Vector2(0, -65)
+offset = Vector2(0, -64.5)
 zoom = Vector2(3.5, 3.5)
 limit_enabled = false
 
