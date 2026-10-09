@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://b3et8l6p5jkxh" path="res://map.tres" id="1_rgh2o"]
 [ext_resource type="Script" uid="uid://o5k4mhrtue5v" path="res://Scripts/tile_map_layer.gd" id="2_pbw6q"]
-[ext_resource type="Texture2D" uid="uid://b5tug5gx81w8o" path="res://Assets/Bulidings/New Piskel-1.png (3).png" id="3_jw32o"]
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://Scripts/character_body_2d.gd" id="3_v1gob"]
 [ext_resource type="Texture2D" uid="uid://bvl2noqxe1ros" path="res://Assets/Bulidings/New Piskel-1.png (4).png" id="4_50glp"]
 [ext_resource type="Texture2D" uid="uid://c8t5epcrpm67b" path="res://player.tres" id="4_jw32o"]
@@ -18,11 +17,6 @@ size = Vector2(14, 15)
 tile_map_data = PackedByteArray("AAD9//z/AAAAAAEAAAD9//3/AAAFAAAAAAD9//7/AAABAAEAAAD9////AAAFAAAAAAD9/wAAAAAAAAEAAAD9/wEAAAAFAAAAAAD9/wIAAAABAAEAAAD+//z/AAADAAAAAAD+//3/AAADAAAAAAD+//7/AAADAAAAAAD+////AAADAAAAAAD+/wAAAAADAAAAAAD+/wEAAAADAAAAAAD+/wIAAAADAAAAAAD///z/AAABAAAAAAD///3/AAABAAAAAAD///7/AAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAD//wIAAAABAAAAAAAAAPz/AAAEAAAAAAAAAP3/AAAEAAAAAAAAAP7/AAAEAAAAAAAAAP//AAAEAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAEAAAAAAAAAAIAAAAEAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAPz/AAACAAAAAAACAP3/AAACAAAAAAACAP7/AAACAAAAAAACAP//AAACAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAADAPz/AAAGAAAAAAADAP3/AAAFAAAAAAADAP7/AAAHAAAAAAADAP//AAAFAAAAAAADAAAAAAAGAAAAAAADAAEAAAAFAAAAAAADAAIAAAAHAAAAAAA=")
 tile_set = ExtResource("1_rgh2o")
 script = ExtResource("2_pbw6q")
-
-[node name="NewPiskel1_png(3)" type="Sprite2D" parent="Map" unique_id=820649182]
-position = Vector2(39337.004, 9682)
-scale = Vector2(1563.5469, 473.14063)
-texture = ExtResource("3_jw32o")
 
 [node name="NewPiskel1_png(4)" type="Sprite2D" parent="Map" unique_id=64330849]
 position = Vector2(-59, -31.75)
