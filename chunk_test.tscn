@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" format=3 uid="uid://b82foioo8d3w5"]
+[gd_scene format=3 uid="uid://c2xe2p0tu2uvk"]
 
-[ext_resource type="Texture2D" uid="uid://cif8hxop5fc1y" path="res://oKX06y.png" id="1_lin4x"]
+[ext_resource type="Texture2D" uid="uid://cif8hxop5fc1y" path="res://Assets/Tiles/oKX06y.png" id="1_alf0d"]
+[ext_resource type="Script" uid="uid://ks6k3741lgab" path="res://chunk.gd" id="1_swfu5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwi41"]
-texture = ExtResource("1_lin4x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_swfu5"]
+texture = ExtResource("1_alf0d")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -747,5 +748,20 @@ texture = ExtResource("1_lin4x")
 28:21/0 = 0
 24:30/0 = 0
 
-[resource]
-sources/0 = SubResource("TileSetAtlasSource_mwi41")
+[sub_resource type="TileSet" id="TileSet_aol0e"]
+sources/0 = SubResource("TileSetAtlasSource_swfu5")
+
+[node name="ChunkTest" type="Node2D" unique_id=9433945]
+script = ExtResource("1_swfu5")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1048950064]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=659638342]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 20, 0, 2, 0, 0, 0)
+tile_set = SubResource("TileSet_aol0e")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=544712559]
+position = Vector2(10, -10)
+rect = Rect2(-10, -6, 16, 16)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

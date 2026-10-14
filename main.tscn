@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://05hij32m7680"]
+
+[ext_resource type="Script" uid="uid://g85tmlge6jpl" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c2xe2p0tu2uvk" path="res://chunk_test.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bewd206dainqa" path="res://camera_2d.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bgcto5m2e47xp" path="res://character_body_2d.tscn" id="4_1bvp3"]
+
+[node name="Node2D" type="Node2D" unique_id=1006425991]
+script = ExtResource("1_ig7tw")
+
+[node name="ChunkTest" parent="." unique_id=9433945 instance=ExtResource("2_0xm2m")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1226482327]
+offset = Vector2(9, -9)
+zoom = Vector2(64, 32)
+script = ExtResource("3_h2yge")
+
+[node name="Player" parent="." unique_id=757944653 instance=ExtResource("4_1bvp3")]
+position = Vector2(8, -8)
