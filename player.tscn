@@ -23,3 +23,4 @@ shape = SubResource("RectangleShape2D_aol0e")
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=1420706761]
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Node2D" unique_id=926014293]
+zoom = Vector2(8, 8)
