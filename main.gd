@@ -14,7 +14,7 @@ func _ready() -> void:
 	_generation()
 
 func _generation() -> void:
-	for i in 14:
+	for i in 16:
 		_spawn_chunk()
 		
 func _spawn_chunk() -> void:

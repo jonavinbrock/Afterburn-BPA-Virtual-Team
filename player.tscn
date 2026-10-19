@@ -8,6 +8,7 @@
 size = Vector2(20, 37)
 
 [node name="Player" type="CharacterBody2D" unique_id=757944653]
+top_level = true
 floor_constant_speed = true
 script = ExtResource("1_f50pn")
 
@@ -23,7 +24,7 @@ shape = SubResource("RectangleShape2D_aol0e")
 
 [node name="Node2D" type="Node2D" parent="Node2D" unique_id=901139890]
 
-[node name="Camera2D" type="Camera2D" parent="Node2D/Node2D" unique_id=2044320651]
+[node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=2044320651]
 texture_filter = 1
 position = Vector2(10, -10)
 offset = Vector2(-10, -55)
