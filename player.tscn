@@ -5,19 +5,20 @@
 [ext_resource type="Script" uid="uid://bewd206dainqa" path="res://camera_2d.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
-size = Vector2(20, 37)
+size = Vector2(8, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=757944653]
 top_level = true
 floor_constant_speed = true
 script = ExtResource("1_f50pn")
+scroll_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280575079]
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.02, 0.02)
 texture = ExtResource("2_ij6vw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=356113335]
-position = Vector2(0, -3.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_aol0e")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1567866004]

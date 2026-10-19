@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://drlg4nisp4hxd"]
+
+[ext_resource type="Script" uid="uid://br1ktipbrnqtf" path="res://oop.gd" id="1_oywem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
+
+[node name="Node2D" type="Node2D" unique_id=1859143206]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1660324243]
+script = ExtResource("1_oywem")
+
+[node name="Node2D" type="Node2D" parent="CharacterBody2D" unique_id=1504473985]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=852096101]
+shape = SubResource("RectangleShape2D_aol0e")
