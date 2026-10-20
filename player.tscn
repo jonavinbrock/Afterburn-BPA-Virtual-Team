@@ -11,7 +11,6 @@ size = Vector2(8, 15)
 top_level = true
 floor_constant_speed = true
 script = ExtResource("1_f50pn")
-scroll_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280575079]
 scale = Vector2(0.02, 0.02)
@@ -34,3 +33,5 @@ zoom = Vector2(7, 7)
 limit_enabled = false
 position_smoothing_enabled = true
 script = ExtResource("3_i3pqv")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2078770373]
