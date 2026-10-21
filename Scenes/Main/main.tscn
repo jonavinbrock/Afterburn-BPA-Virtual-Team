@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://05hij32m7680"]
+
+[ext_resource type="Script" uid="uid://g85tmlge6jpl" path="res://Scripts/Main/main.gd" id="1_qw60k"]
+[ext_resource type="PackedScene" uid="uid://c2xe2p0tu2uvk" path="res://Scenes/Chunk/chunk.tscn" id="2_5yls4"]
+[ext_resource type="PackedScene" uid="uid://bgcto5m2e47xp" path="res://Scenes/Player/player.tscn" id="3_p6jpk"]
+[ext_resource type="PackedScene" uid="uid://cnhtg8htrsgah" path="res://Scripts/Drone/enemy_drone.tscn" id="4_5yls4"]
+
+[node name="Node2D" type="Node2D" unique_id=1006425991]
+script = ExtResource("1_qw60k")
+
+[node name="ChunkTest" parent="." unique_id=9433945 instance=ExtResource("2_5yls4")]
+
+[node name="Player" parent="." unique_id=757944653 instance=ExtResource("3_p6jpk")]
+position = Vector2(5, 2)
+
+[node name="Drone" parent="." unique_id=1130156932 instance=ExtResource("4_5yls4")]
+position = Vector2(59, -5)

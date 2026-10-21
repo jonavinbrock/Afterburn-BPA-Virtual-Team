@@ -3,7 +3,7 @@ class_name Main
 
 const chunkOffset = 16
 static var chunks:Array[chunk] = []
-var chunkPackedScene = preload("res://chunk_test.tscn")
+var chunkPackedScene = preload("res://Scenes/Chunk/chunk.tscn")
 var lastX := 0.0
 
 func _ready() -> void:

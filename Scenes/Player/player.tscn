@@ -1,24 +1,28 @@
 [gd_scene format=3 uid="uid://bgcto5m2e47xp"]
 
-[ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://character_body_2d.gd" id="1_f50pn"]
-[ext_resource type="Texture2D" uid="uid://beyav24l7ovfr" path="res://no_fuel_player.png" id="2_ij6vw"]
-[ext_resource type="Script" uid="uid://bewd206dainqa" path="res://camera_2d.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://Scripts/Player/player_control.gd" id="1_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://iosjw6ynjl2j" path="res://Assets/Player/player_1.png" id="2_mtuoh"]
+[ext_resource type="Script" uid="uid://bewd206dainqa" path="res://Scripts/Camera/camera_2d.gd" id="3_htcer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
-size = Vector2(8, 15)
+size = Vector2(13, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=757944653]
 top_level = true
 floor_constant_speed = true
-script = ExtResource("1_f50pn")
+script = ExtResource("1_xpcdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1280575079]
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("2_ij6vw")
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mtuoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=356113335]
-position = Vector2(0, -1.5)
+position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_aol0e")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2078770373]
+exclude_parent = false
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1567866004]
 
@@ -27,11 +31,10 @@ shape = SubResource("RectangleShape2D_aol0e")
 [node name="Camera2D" type="Camera2D" parent="Node2D" unique_id=2044320651]
 texture_filter = 1
 position = Vector2(10, -10)
-offset = Vector2(-10, -55)
+offset = Vector2(-10, -52.5)
 anchor_mode = 0
 zoom = Vector2(7, 7)
 limit_enabled = false
 position_smoothing_enabled = true
-script = ExtResource("3_i3pqv")
-
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=2078770373]
+position_smoothing_speed = 3.0
+script = ExtResource("3_htcer")

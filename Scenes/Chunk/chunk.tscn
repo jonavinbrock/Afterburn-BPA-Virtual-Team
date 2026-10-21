@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://c2xe2p0tu2uvk"]
 
-[ext_resource type="Script" uid="uid://ks6k3741lgab" path="res://chunk.gd" id="1_swfu5"]
-[ext_resource type="Texture2D" uid="uid://2p1snfkphk74" path="res://Assets/Tiles/new-road.png" id="2_swfu5"]
+[ext_resource type="Script" uid="uid://ks6k3741lgab" path="res://Scripts/Chunk/chunk.gd" id="1_rn3ng"]
+[ext_resource type="Texture2D" uid="uid://2p1snfkphk74" path="res://Assets/Tiles/new-road.png" id="2_nf13t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxllu"]
-texture = ExtResource("2_swfu5")
+texture = ExtResource("2_nf13t")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 1:0/0 = 0
@@ -42,12 +42,13 @@ texture = ExtResource("2_swfu5")
 terrain_set_0/mode = 2
 sources/0 = SubResource("TileSetAtlasSource_hxllu")
 
-[node name="ChunkTest" type="Node2D" unique_id=9433945]
-script = ExtResource("1_swfu5")
+[node name="Chunk" type="Node2D" unique_id=9433945]
+script = ExtResource("1_rn3ng")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1048950064]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=659638342]
+texture_filter = 1
 tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAABAP7/AAABAAAAAAABAP//AAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAACAP7/AAACAAAAAAACAP//AAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAADAP7/AAADAAAAAAADAP//AAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAAAAP//AAAAAAEAAAA=")
 tile_set = SubResource("TileSet_v7nse")
 
