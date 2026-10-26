@@ -4,14 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://c2xe2p0tu2uvk" path="res://Scenes/Chunk/chunk.tscn" id="2_5yls4"]
 [ext_resource type="PackedScene" uid="uid://bgcto5m2e47xp" path="res://Scenes/Player/player.tscn" id="3_p6jpk"]
 [ext_resource type="PackedScene" uid="uid://cnhtg8htrsgah" path="res://Scripts/Drone/enemy_drone.tscn" id="4_5yls4"]
+[ext_resource type="PackedScene" uid="uid://kaxpcx22mn7c" path="res://score.tscn" id="5_p6jpk"]
 
 [node name="Node2D" type="Node2D" unique_id=1006425991]
 script = ExtResource("1_qw60k")
 
 [node name="ChunkTest" parent="." unique_id=9433945 instance=ExtResource("2_5yls4")]
 
-[node name="Player" parent="." unique_id=757944653 instance=ExtResource("3_p6jpk")]
-position = Vector2(5, 2)
-
 [node name="Drone" parent="." unique_id=1130156932 instance=ExtResource("4_5yls4")]
-position = Vector2(59, -5)
+position = Vector2(174, -7)
+
+[node name="Player" parent="." unique_id=757944653 instance=ExtResource("3_p6jpk")]
+position = Vector2(5, 1)
+
+[node name="Control" parent="." unique_id=794162153 instance=ExtResource("5_p6jpk")]
+offset_left = -115.0
+offset_top = -40.999996
+offset_right = -115.0
+offset_bottom = -40.999996

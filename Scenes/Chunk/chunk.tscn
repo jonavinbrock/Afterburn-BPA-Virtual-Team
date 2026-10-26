@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ks6k3741lgab" path="res://Scripts/Chunk/chunk.gd" id="1_rn3ng"]
 [ext_resource type="Texture2D" uid="uid://2p1snfkphk74" path="res://Assets/Tiles/new-road.png" id="2_nf13t"]
+[ext_resource type="Script" uid="uid://cddqamjc41707" path="res://Scenes/Chunk/spawns.gd" id="3_nf13t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxllu"]
 texture = ExtResource("2_nf13t")
@@ -55,5 +56,20 @@ tile_set = SubResource("TileSet_v7nse")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D" unique_id=544712559]
 position = Vector2(10, -1)
 rect = Rect2(-10, -31, 64, 64)
+
+[node name="Spawns" type="Node2D" parent="." unique_id=1646830333]
+script = ExtResource("3_nf13t")
+
+[node name="DroneSpawn" type="Marker2D" parent="Spawns" unique_id=703062819]
+position = Vector2(60, -5)
+
+[node name="DroneSpawn2" type="Marker2D" parent="Spawns" unique_id=244092928]
+position = Vector2(60, 7)
+
+[node name="DroneSpawn3" type="Marker2D" parent="Spawns" unique_id=815674448]
+position = Vector2(60, 19)
+
+[node name="DroneSpawn4" type="Marker2D" parent="Spawns" unique_id=811331630]
+position = Vector2(60, -17)
 
 [connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="." method="_not_visible"]

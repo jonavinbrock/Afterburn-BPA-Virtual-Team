@@ -6,15 +6,19 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
 size = Vector2(9, 8)
 
-[node name="Drone" type="CharacterBody2D" unique_id=1130156932]
+[node name="Drone" type="CharacterBody2D" unique_id=1130156932 groups=["enemies"]]
+top_level = true
 script = ExtResource("1_p6v6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1854358577]
-top_level = true
 texture_filter = 1
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_3yms3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538535951]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_aol0e")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1840312315]
+rect = Rect2(-5, -4, 10, 8)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
