@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const dronePackedScene = preload("res://Scripts/Drone/enemy_drone.tscn")
 
-var scrollSpeed = -25.0
+var scrollSpeed = -5.0
 var startingPosition = 256.0
 var endingPosition = 20.0
 

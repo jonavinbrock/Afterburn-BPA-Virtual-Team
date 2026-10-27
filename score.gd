@@ -1,4 +1,6 @@
 extends Control
+class_name Score
+
 
 var current_score: int = 0
 

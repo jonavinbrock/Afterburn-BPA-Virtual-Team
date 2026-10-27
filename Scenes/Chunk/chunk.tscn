@@ -72,4 +72,9 @@ position = Vector2(60, 19)
 [node name="DroneSpawn4" type="Marker2D" parent="Spawns" unique_id=811331630]
 position = Vector2(60, -17)
 
+[node name="Timer" type="Timer" parent="Spawns" unique_id=1920330312]
+wait_time = 20.0
+autostart = true
+
 [connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="." method="_not_visible"]
+[connection signal="timeout" from="Spawns/Timer" to="Spawns" method="_on_timer_timeout"]

@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var scroll_speed: float = 125.0
 @export var animation_speed: float = 3.0
 @export var moving: bool = false
-
 @onready var ray: RayCast2D = $RayCast2D
+@onready var camera: Camera2D = $Camera2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -13,6 +13,9 @@ const TILE_SIZE = 12
 var inputs = {"up": Vector2.UP, "down": Vector2.DOWN}
 var max_negative_y = -32
 var max_positive_y = 32
+
+func _ready() -> void:
+	camera.make_current()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
