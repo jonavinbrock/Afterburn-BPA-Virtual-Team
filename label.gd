@@ -3,7 +3,6 @@ extends Label
 var points = 0
 var time_elapsed = 0.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	update_points()
 
@@ -19,4 +18,3 @@ func add_points(amount):
 	
 func update_points():
 	text = "Points: %d" % points
- 
