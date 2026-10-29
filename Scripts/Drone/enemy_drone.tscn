@@ -2,6 +2,41 @@
 
 [ext_resource type="Texture2D" uid="uid://blfjni6yf6yo" path="res://Assets/Drone/drone-enemy_1.png" id="1_3yms3"]
 [ext_resource type="Script" uid="uid://bjssxy440p7qf" path="res://Scenes/Drone/enemy_drone.gd" id="1_p6v6l"]
+[ext_resource type="Texture2D" uid="uid://chbj4cfpx2ywi" path="res://Assets/Drone/Drone Enemy-2.png.png" id="3_y1k5c"]
+[ext_resource type="Texture2D" uid="uid://blerqq0bqx2id" path="res://Assets/Drone/Drone Enemy-3.png.png" id="4_2s44a"]
+[ext_resource type="Texture2D" uid="uid://dasqpfsuwj6qp" path="res://Assets/Drone/Drone Enemy-4.png.png" id="5_y2fir"]
+[ext_resource type="Texture2D" uid="uid://dniahln2a0ol7" path="res://Assets/Drone/Drone Enemy-5.png.png" id="6_47lo7"]
+[ext_resource type="Texture2D" uid="uid://d1ch4ju6aeqiw" path="res://Assets/Drone/Drone Enemy-6.png.png" id="7_vqnm8"]
+[ext_resource type="Texture2D" uid="uid://4vwpjhbdiotv" path="res://Assets/Drone/Drone Enemy-7.png.png" id="8_fehrf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6yky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3yms3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y1k5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2s44a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y2fir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_47lo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vqnm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fehrf")
+}],
+"loop": 1,
+"name": &"Drone",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
 size = Vector2(9, 8)
@@ -10,10 +45,11 @@ size = Vector2(9, 8)
 top_level = true
 script = ExtResource("1_p6v6l")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1854358577]
-texture_filter = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999317623]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_3yms3")
+sprite_frames = SubResource("SpriteFrames_e6yky")
+animation = &"Drone"
+frame_progress = 0.43905595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538535951]
 shape = SubResource("RectangleShape2D_aol0e")

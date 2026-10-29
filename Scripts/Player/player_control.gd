@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var moving: bool = false
 @onready var ray: RayCast2D = $RayCast2D
 @onready var camera: Camera2D = $Camera2D
-
+@onready var animated_sprite = $AnimatedSprite2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		animated_sprite.play("Idle")
 	# Scroll in brochacho
 	position.x += scroll_speed * delta
 	check_enemy_collision()
