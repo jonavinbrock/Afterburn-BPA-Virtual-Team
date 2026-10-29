@@ -21,3 +21,4 @@ offset_bottom = -40.999996
 position = Vector2(11, 1)
 
 [node name="Node2D" parent="." unique_id=108266270 instance=ExtResource("5_2a143")]
+position = Vector2(0, -32)
