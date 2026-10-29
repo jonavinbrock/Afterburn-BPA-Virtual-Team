@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kaxpcx22mn7c"]
 
-[ext_resource type="Script" uid="uid://g4m5vjanhxya" path="res://score.gd" id="1_ceanc"]
-[ext_resource type="Script" uid="uid://cgt8hikrmuga1" path="res://label.gd" id="2_ceanc"]
+[ext_resource type="Script" uid="uid://g4m5vjanhxya" path="res://Scripts/GUI/score.gd" id="1_ceanc"]
+[ext_resource type="Script" uid="uid://cgt8hikrmuga1" path="res://Scripts/GUI/label.gd" id="2_iy1wj"]
 
 [node name="Control" type="Control" unique_id=794162153]
 layout_mode = 3
@@ -24,4 +24,4 @@ theme_override_constants/outline_size = 6
 theme_override_font_sizes/font_size = 40
 text = "Points: 0"
 uppercase = true
-script = ExtResource("2_ceanc")
+script = ExtResource("2_iy1wj")
