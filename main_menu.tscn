@@ -5,6 +5,11 @@
 [node name="Main Menu" type="Node2D" unique_id=1449988407]
 script = ExtResource("1_06t4h")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=957019175]
+offset_right = 1147.0
+offset_bottom = 646.0
+color = Color(0.22352941, 0.26666668, 0.43137255, 1)
+
 [node name="Button Manager" type="Control" parent="." unique_id=1450567671]
 layout_mode = 3
 anchors_preset = 0
@@ -17,6 +22,7 @@ offset_left = 423.0
 offset_top = 186.0
 offset_right = 714.0
 offset_bottom = 277.0
+theme_override_colors/font_color = Color(1.0107458e-06, 0.7454246, 0.42822272, 1)
 text = "Strat Gema"
 
 [node name="Uncloks" type="Button" parent="Button Manager" unique_id=467100872]
@@ -25,6 +31,7 @@ offset_left = 422.0
 offset_top = 297.0
 offset_right = 713.0
 offset_bottom = 388.0
+theme_override_colors/font_color = Color(0, 0.99908334, 0.9858952, 1)
 text = "Uncloskcs"
 
 [node name="Setings" type="Button" parent="Button Manager" unique_id=512490586]
@@ -33,6 +40,7 @@ offset_left = 422.0
 offset_top = 407.0
 offset_right = 713.0
 offset_bottom = 498.0
+theme_override_colors/font_color = Color(0.9802024, 0.8853041, 0, 1)
 text = "Setings"
 
 [node name="Exits" type="Button" parent="Button Manager" unique_id=793991352]
@@ -41,6 +49,7 @@ offset_left = 421.0
 offset_top = 520.0
 offset_right = 712.0
 offset_bottom = 611.0
+theme_override_colors/font_color = Color(1, 0.34500286, 0.29367366, 1)
 text = "Exist GHme"
 
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
