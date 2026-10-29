@@ -72,4 +72,9 @@ func check_enemy_collision() -> void:
 			return
 
 func die():
-	queue_free()
+	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+func _on_tree_exited() -> void:
+	print("Die")
+	

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://qm66ntyyyurh"]
+
+[ext_resource type="Script" uid="uid://denx8sj78nk81" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="Main Menu" type="Node2D" unique_id=1449988407]
+script = ExtResource("1_06t4h")
+
+[node name="Button Manager" type="Control" parent="." unique_id=1450567671]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button Manager" unique_id=1749363530]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 186.0
+offset_right = 714.0
+offset_bottom = 277.0
+text = "Strat Gema"
+
+[node name="Uncloks" type="Button" parent="Button Manager" unique_id=467100872]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 297.0
+offset_right = 713.0
+offset_bottom = 388.0
+text = "Uncloskcs"
+
+[node name="Setings" type="Button" parent="Button Manager" unique_id=512490586]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 407.0
+offset_right = 713.0
+offset_bottom = 498.0
+text = "Setings"
+
+[node name="Exits" type="Button" parent="Button Manager" unique_id=793991352]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 520.0
+offset_right = 712.0
+offset_bottom = 611.0
+text = "Exist GHme"
+
+[connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button Manager/Uncloks" to="." method="_on_uncloks_pressed"]
+[connection signal="pressed" from="Button Manager/Setings" to="." method="_on_setings_pressed"]
+[connection signal="pressed" from="Button Manager/Exits" to="." method="_on_exits_pressed"]

@@ -46,6 +46,7 @@ top_level = true
 script = ExtResource("1_p6v6l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999317623]
+texture_filter = 1
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_e6yky")
 animation = &"Drone"
