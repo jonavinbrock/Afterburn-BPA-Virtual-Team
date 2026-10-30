@@ -10,6 +10,20 @@ offset_right = 1147.0
 offset_bottom = 646.0
 color = Color(0.22352941, 0.26666668, 0.43137255, 1)
 
+[node name="Title" type="Label" parent="." unique_id=1795250364]
+offset_left = 422.0
+offset_top = 80.0
+offset_right = 714.0
+offset_bottom = 154.0
+theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
+theme_override_colors/font_outline_color = Color(0.6108037, 0.13864732, 0.42537886, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 14
+theme_override_font_sizes/font_size = 42
+text = "Aftevrbubiunr"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Button Manager" type="Control" parent="." unique_id=1450567671]
 layout_mode = 3
 anchors_preset = 0

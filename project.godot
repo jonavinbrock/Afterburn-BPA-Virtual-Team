@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Afterburn BPA Virtual Team"
-run/main_scene="uid://05hij32m7680"
+run/main_scene="uid://qm66ntyyyurh"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]

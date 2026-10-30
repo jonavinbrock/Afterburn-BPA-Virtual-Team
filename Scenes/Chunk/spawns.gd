@@ -2,7 +2,7 @@ extends Node2D
 
 const DRONE_SCENE = preload("res://Scripts/Drone/enemy_drone.tscn")
 
-@export_range(0, 100) var spawn_chance: int = 50
+@export_range(0, 100) var spawn_chance: int = 15
 
 func _ready() -> void:
 	await get_tree().process_frame
