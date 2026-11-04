@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://6gouhvjgnrh1"]
 
+[ext_resource type="Script" uid="uid://ccgxsa65asog5" path="res://pause.gd" id="1_45vjg"]
+
 [node name="Pause" type="Node2D" unique_id=667701945]
+script = ExtResource("1_45vjg")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=305477216]
 offset_right = 427.0
@@ -27,10 +30,21 @@ offset_top = 31.0
 offset_right = 40.0
 offset_bottom = 71.0
 
-[node name="Button" type="Button" parent="Buttons" unique_id=246242957]
+[node name="Pause_Unpause" type="Button" parent="Buttons" unique_id=246242957]
 layout_mode = 0
 offset_left = 158.0
 offset_top = 75.0
 offset_right = 265.0
 offset_bottom = 106.0
 text = "Unpause"
+
+[node name="Return" type="Button" parent="Buttons" unique_id=1981477479]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 119.0
+offset_right = 303.0
+offset_bottom = 150.0
+text = "Return To Main Menu"
+
+[connection signal="pressed" from="Buttons/Pause_Unpause" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/Return" to="." method="_on_button_pressed"]

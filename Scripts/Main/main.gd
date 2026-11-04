@@ -8,6 +8,8 @@ var chunkPackedScene = preload("res://Scenes/Chunk/chunk.tscn")
 var lastX := 0.0
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
+	
 	for i in chunks:
 		if is_instance_valid(i):
 			i.queue_free()
