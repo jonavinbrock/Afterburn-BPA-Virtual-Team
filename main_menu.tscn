@@ -20,7 +20,7 @@ theme_override_colors/font_outline_color = Color(0.6108037, 0.13864732, 0.425378
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 14
 theme_override_font_sizes/font_size = 42
-text = "Aftevrbubiunr"
+text = "AfterBurn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -37,7 +37,7 @@ offset_top = 186.0
 offset_right = 714.0
 offset_bottom = 277.0
 theme_override_colors/font_color = Color(1.0107458e-06, 0.7454246, 0.42822272, 1)
-text = "Strat Gema"
+text = "Start Game"
 
 [node name="Uncloks" type="Button" parent="Button Manager" unique_id=467100872]
 layout_mode = 0
@@ -46,7 +46,7 @@ offset_top = 297.0
 offset_right = 713.0
 offset_bottom = 388.0
 theme_override_colors/font_color = Color(0, 0.99908334, 0.9858952, 1)
-text = "Uncloskcs"
+text = "Unlocks "
 
 [node name="Setings" type="Button" parent="Button Manager" unique_id=512490586]
 layout_mode = 0
@@ -55,7 +55,7 @@ offset_top = 407.0
 offset_right = 713.0
 offset_bottom = 498.0
 theme_override_colors/font_color = Color(0.9802024, 0.8853041, 0, 1)
-text = "Setings"
+text = "Settings"
 
 [node name="Exits" type="Button" parent="Button Manager" unique_id=793991352]
 layout_mode = 0
@@ -64,7 +64,7 @@ offset_top = 520.0
 offset_right = 712.0
 offset_bottom = 611.0
 theme_override_colors/font_color = Color(1, 0.34500286, 0.29367366, 1)
-text = "Exist GHme"
+text = "Exit Game"
 
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Button Manager/Uncloks" to="." method="_on_uncloks_pressed"]

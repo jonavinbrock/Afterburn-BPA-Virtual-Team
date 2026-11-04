@@ -9,7 +9,7 @@ func _ready() -> void:
 
 	var score = get_tree().get_first_node_in_group("score")
 
-	while score == null or score.points < 400:
+	while score == null or score.points < 100:
 		await get_tree().process_frame
 		score = get_tree().get_first_node_in_group("score")
 		
@@ -18,10 +18,10 @@ func _ready() -> void:
 func spawn_enemy() -> void:
 	var score = get_tree().get_first_node_in_group("score")
 	
-	if score == null or score.points < 400:
+	if score == null or score.points < 100:
 		return
 		
-	if randi_range(1, 100) > spawn_chance:
+	if randi_range(1,75) > spawn_chance:
 		return
 	
 	var points: Array[Marker2D] = []
