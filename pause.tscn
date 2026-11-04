@@ -8,8 +8,9 @@ offset_bottom = 274.0
 color = Color(0.22352941, 0.26666668, 0.43137255, 1)
 
 [node name="Label" type="Label" parent="." unique_id=145637174]
+offset_top = 31.0
 offset_right = 427.0
-offset_bottom = 58.0
+offset_bottom = 89.0
 theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
 theme_override_colors/font_outline_color = Color(0.6117647, 0.13725491, 0.42352942, 1)
 theme_override_constants/line_spacing = 3
@@ -19,15 +20,17 @@ theme_override_font_sizes/font_size = 42
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="Buttons" type="Control" parent="Label" unique_id=443445648]
+[node name="Buttons" type="Control" parent="." unique_id=443445648]
+layout_mode = 3
 anchors_preset = 0
+offset_top = 31.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 71.0
 
-[node name="Button" type="Button" parent="Label/Buttons" unique_id=246242957]
+[node name="Button" type="Button" parent="Buttons" unique_id=246242957]
 layout_mode = 0
 offset_left = 158.0
-offset_top = 80.0
+offset_top = 75.0
 offset_right = 265.0
-offset_bottom = 110.0
+offset_bottom = 106.0
 text = "Unpause"
