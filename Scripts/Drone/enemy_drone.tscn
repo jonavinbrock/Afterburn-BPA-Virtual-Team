@@ -42,7 +42,6 @@ animations = [{
 size = Vector2(9, 8)
 
 [node name="Drone" type="CharacterBody2D" unique_id=1130156932 groups=["enemies"]]
-top_level = true
 script = ExtResource("1_p6v6l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999317623]

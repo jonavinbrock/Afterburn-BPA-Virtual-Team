@@ -59,6 +59,7 @@ rect = Rect2(-10, -31, 64, 64)
 
 [node name="Spawns" type="Node2D" parent="." unique_id=1646830333]
 script = ExtResource("3_nf13t")
+spawn_chance = 77
 
 [node name="DroneSpawn" type="Marker2D" parent="Spawns" unique_id=703062819]
 position = Vector2(60, -5)

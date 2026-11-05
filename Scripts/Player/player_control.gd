@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var scroll_speed: float = 125.0
 @export var animation_speed: float = 3.0
@@ -15,6 +16,7 @@ var max_negative_y = -32
 var max_positive_y = 32
 
 func _ready() -> void:
+	GlobalAtributes.player = self
 	camera.make_current()
 
 func _physics_process(delta: float) -> void:

@@ -2,18 +2,26 @@
 
 [ext_resource type="Script" uid="uid://ccgxsa65asog5" path="res://pause.gd" id="1_45vjg"]
 
-[node name="Pause" type="Node2D" unique_id=667701945]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1014107190]
+process_mode = 3
 script = ExtResource("1_45vjg")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=305477216]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138464517]
 offset_right = 427.0
 offset_bottom = 274.0
 color = Color(0.22352941, 0.26666668, 0.43137255, 1)
 
-[node name="Label" type="Label" parent="." unique_id=145637174]
+[node name="Buttons" type="Control" parent="." unique_id=1629607435]
+layout_mode = 3
+anchors_preset = 0
 offset_top = 31.0
+offset_right = 40.0
+offset_bottom = 71.0
+
+[node name="Label" type="Label" parent="Buttons" unique_id=818901386]
+layout_mode = 0
 offset_right = 427.0
-offset_bottom = 89.0
+offset_bottom = 58.0
 theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
 theme_override_colors/font_outline_color = Color(0.6117647, 0.13725491, 0.42352942, 1)
 theme_override_constants/line_spacing = 3
@@ -23,28 +31,21 @@ theme_override_font_sizes/font_size = 42
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="Buttons" type="Control" parent="." unique_id=443445648]
-layout_mode = 3
-anchors_preset = 0
-offset_top = 31.0
-offset_right = 40.0
-offset_bottom = 71.0
-
-[node name="Pause_Unpause" type="Button" parent="Buttons" unique_id=246242957]
+[node name="Resume" type="Button" parent="Buttons" unique_id=1617276362]
 layout_mode = 0
 offset_left = 158.0
 offset_top = 75.0
 offset_right = 265.0
 offset_bottom = 106.0
-text = "Unpause"
+text = "Resume"
 
-[node name="Return" type="Button" parent="Buttons" unique_id=1981477479]
+[node name="Return" type="Button" parent="Buttons" unique_id=422006227]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 119.0
-offset_right = 303.0
-offset_bottom = 150.0
-text = "Return To Main Menu"
+offset_left = 159.0
+offset_top = 118.0
+offset_right = 264.0
+offset_bottom = 149.0
+text = "Return"
 
-[connection signal="pressed" from="Buttons/Pause_Unpause" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Buttons/Return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Buttons/Return" to="." method="_on_return_pressed"]

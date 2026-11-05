@@ -24,4 +24,4 @@ func _on_setings_pressed() -> void:
 
 
 func _on_exits_pressed() -> void:
-	get_tree().quit(                                                                       )
+	get_tree().quit()

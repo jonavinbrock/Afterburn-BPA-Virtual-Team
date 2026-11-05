@@ -4,6 +4,7 @@ var points = 0
 var time_elapsed = 0.0
 
 func _ready() -> void:
+	GlobalAtributes.points = points
 	update_points()
 
 func _process(delta: float) -> void:
