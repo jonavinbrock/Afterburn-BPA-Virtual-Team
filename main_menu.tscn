@@ -20,7 +20,7 @@ theme_override_colors/font_outline_color = Color(0.6108037, 0.13864732, 0.425378
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 14
 theme_override_font_sizes/font_size = 42
-text = "AfterBurn"
+text = "Afterburn"
 horizontal_alignment = 1
 vertical_alignment = 1
 

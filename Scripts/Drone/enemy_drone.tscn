@@ -39,7 +39,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
-size = Vector2(9, 8)
+size = Vector2(7, 4)
 
 [node name="Drone" type="CharacterBody2D" unique_id=1130156932 groups=["enemies"]]
 script = ExtResource("1_p6v6l")
@@ -52,6 +52,7 @@ animation = &"Drone"
 frame_progress = 0.43905595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538535951]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_aol0e")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1840312315]

@@ -20,8 +20,10 @@ offset_bottom = 71.0
 
 [node name="Label" type="Label" parent="Buttons" unique_id=818901386]
 layout_mode = 0
-offset_right = 427.0
-offset_bottom = 58.0
+offset_left = 106.0
+offset_top = 3.0
+offset_right = 318.0
+offset_bottom = 61.0
 theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
 theme_override_colors/font_outline_color = Color(0.6117647, 0.13725491, 0.42352942, 1)
 theme_override_constants/line_spacing = 3

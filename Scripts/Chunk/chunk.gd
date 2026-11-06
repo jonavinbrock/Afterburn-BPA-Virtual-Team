@@ -7,6 +7,9 @@ signal timeout
 const TIME_PERIOD = 1
 
 var time = 0
+func _ready() -> void:
+	z_index = 0
+
 
 func _process(delta: float) -> void:
 	time += delta

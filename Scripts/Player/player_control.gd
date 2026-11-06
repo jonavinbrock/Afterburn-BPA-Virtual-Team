@@ -16,18 +16,19 @@ var max_negative_y = -32
 var max_positive_y = 32
 
 func _ready() -> void:
+	z_index = 2
 	GlobalAtributes.player = self
-	camera.make_current()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	get_parent().find_child("Camera2D").position.x = self.position.x
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		animated_sprite.play("Idle")
 	# Scroll in brochacho
 	position.x += scroll_speed * delta
 	check_enemy_collision()
-
+	scroll_speed += 0.05
 func _unhandled_input(event: InputEvent) -> void:
 	if moving:
 		return
@@ -72,7 +73,6 @@ func check_enemy_collision() -> void:
 		if collider.is_in_group("enemies"):
 			die()
 			return
-
 func die():
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 

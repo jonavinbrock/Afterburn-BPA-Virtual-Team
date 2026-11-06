@@ -46,20 +46,9 @@ sources/0 = SubResource("TileSetAtlasSource_hxllu")
 [node name="Chunk" type="Node2D" unique_id=9433945]
 script = ExtResource("1_rn3ng")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1048950064]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=659638342]
-texture_filter = 1
-tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAABAP7/AAABAAAAAAABAP//AAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAACAP7/AAACAAAAAAACAP//AAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAADAP7/AAADAAAAAAADAP//AAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAAAAP//AAAAAAEAAAA=")
-tile_set = SubResource("TileSet_v7nse")
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D" unique_id=544712559]
-position = Vector2(10, -1)
-rect = Rect2(-10, -31, 64, 64)
-
 [node name="Spawns" type="Node2D" parent="." unique_id=1646830333]
 script = ExtResource("3_nf13t")
-spawn_chance = 77
+spawn_chance = 15
 
 [node name="DroneSpawn" type="Marker2D" parent="Spawns" unique_id=703062819]
 position = Vector2(60, -5)
@@ -76,5 +65,16 @@ position = Vector2(60, -17)
 [node name="Timer" type="Timer" parent="Spawns" unique_id=2032103714]
 autostart = true
 
-[connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="." method="_not_visible"]
+[node name="Node2D" type="Node2D" parent="." unique_id=1048950064]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=659638342]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAABAP7/AAABAAAAAAABAP//AAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAACAP7/AAACAAAAAAACAP//AAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAADAP7/AAADAAAAAAADAP//AAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAAAAP//AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_v7nse")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D" unique_id=544712559]
+position = Vector2(10, -1)
+rect = Rect2(-10, -31, 64, 64)
+
 [connection signal="timeout" from="Spawns/Timer" to="Spawns" method="_on_timer_timeout"]
+[connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="." method="_not_visible"]

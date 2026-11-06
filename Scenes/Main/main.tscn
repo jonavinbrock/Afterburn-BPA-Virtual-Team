@@ -21,8 +21,19 @@ offset_bottom = -40.999996
 [node name="Node2D" parent="." unique_id=108266270 instance=ExtResource("5_2a143")]
 
 [node name="CanvasLayer" parent="." unique_id=1014107190 instance=ExtResource("6_2a143")]
-scale = Vector2(2.7, 2.365)
-transform = Transform2D(2.7, 0, 0, 2.365, 0, 0)
+offset = Vector2(310, 50)
+scale = Vector2(1.25, 2)
+transform = Transform2D(1.25, 0, 0, 2, 310, 50)
 
 [node name="Player" parent="." unique_id=757944653 instance=ExtResource("3_p6jpk")]
 position = Vector2(11, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1613963224]
+texture_filter = 1
+position = Vector2(10, -10)
+offset = Vector2(-10, -63.5)
+anchor_mode = 0
+zoom = Vector2(6, 6)
+limit_enabled = false
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
