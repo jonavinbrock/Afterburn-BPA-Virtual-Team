@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://qm66ntyyyurh"]
+
+[ext_resource type="Script" uid="uid://denx8sj78nk81" path="res://Scripts/GUI/main_menu.gd" id="1_gv7mq"]
+[ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_sar4h"]
+
+[node name="Main Menu" type="Node2D" unique_id=1449988407]
+script = ExtResource("1_gv7mq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=957019175]
+offset_right = 1147.0
+offset_bottom = 646.0
+color = Color(0.1109196, 0.0067062946, 0.008779497, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1795250364]
+offset_left = 161.0
+offset_top = 97.0
+offset_right = 1011.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
+theme_override_colors/font_outline_color = Color(0.6108037, 0.13864732, 0.42537886, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 14
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 50
+text = "A F T E R B U R N"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Manager" type="Control" parent="." unique_id=1450567671]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button Manager" unique_id=1749363530]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 191.0
+offset_right = 772.0
+offset_bottom = 282.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 40
+text = "START GAME"
+
+[node name="Unlocks" type="Button" parent="Button Manager" unique_id=467100872]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 297.0
+offset_right = 771.0
+offset_bottom = 388.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 40
+text = "UNLOCKS"
+
+[node name="Settings" type="Button" parent="Button Manager" unique_id=512490586]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 403.0
+offset_right = 768.0
+offset_bottom = 494.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+
+[node name="Exit" type="Button" parent="Button Manager" unique_id=793991352]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 513.0
+offset_right = 767.0
+offset_bottom = 604.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 40
+text = "EXIT GAME"
+
+[connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button Manager/Unlocks" to="." method="_on_uncloks_pressed"]
+[connection signal="pressed" from="Button Manager/Settings" to="." method="_on_setings_pressed"]
+[connection signal="pressed" from="Button Manager/Exit" to="." method="_on_exit_pressed"]

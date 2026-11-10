@@ -1,0 +1,20 @@
+extends Node2D
+
+func _ready() -> void:
+	get_tree().paused = false
+
+# Press play to start the main scene
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Main/main.tscn")
+
+
+func _on_unlocks_pressed() -> void:
+	pass # Likely to not ever be finished
+
+
+func _on_settings_pressed() -> void:
+	pass # To Be Done
+
+# Press exit to exit the game
+func _on_exit_pressed() -> void:
+	get_tree().quit()

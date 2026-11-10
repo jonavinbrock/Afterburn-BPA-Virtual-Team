@@ -7,6 +7,7 @@ static var chunks: Array[chunk] = []
 var chunkPackedScene = preload("res://Scenes/Chunk/chunk.tscn")
 var lastX := 0.0
 
+# Clear and generate CHUNKS.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	
@@ -17,10 +18,12 @@ func _ready() -> void:
 	chunks.clear()
 	_generation()
 
+# Handler for how far chunks spawn
 func _generation() -> void:
 	for i in range(16):
 		_spawn_chunk()
 
+# Check for if there is a node and where to spawn the next chunk
 func _spawn_chunk() -> void:
 	var chunk_instance: chunk = chunkPackedScene.instantiate()
 

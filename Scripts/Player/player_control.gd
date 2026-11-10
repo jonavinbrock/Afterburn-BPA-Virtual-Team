@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
+# Variables
 @export var scroll_speed: float = 125.0
 @export var animation_speed: float = 3.0
 @export var moving: bool = false
 @onready var ray: RayCast2D = $RayCast2D
-@onready var camera: Camera2D = $Camera2D
 @onready var animated_sprite = $AnimatedSprite2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -20,15 +20,19 @@ func _ready() -> void:
 	GlobalAtributes.player = self
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Godot's gravity bloat that I'm not removing - Jonavin
 	get_parent().find_child("Camera2D").position.x = self.position.x
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		animated_sprite.play("Idle")
-	# Scroll in brochacho
+		
+	# Camera Scroll for the player to create the effect of the player
+	# skating into the scene
 	position.x += scroll_speed * delta
 	check_enemy_collision()
 	scroll_speed += 0.05
+	
+# Function that handles input to move the player up or down
 func _unhandled_input(event: InputEvent) -> void:
 	if moving:
 		return
@@ -36,6 +40,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.is_action_pressed(dir):
 			move(dir)
 
+# Function that handles how far the player moves up and down.
+# This allows you to move to one lane instead of slowly moving up.
 func move(dir):
 	var movement = inputs[dir] * TILE_SIZE
 	var target_position = position + movement
@@ -55,7 +61,8 @@ func move(dir):
 		return
 	if target_position.y >= max_negative_y:
 		return
-		
+
+# Collision check for enemies, obstacles, etc.
 func check_enemy_collision() -> void:
 	var space = get_world_2d().direct_space_state
 	var query = PhysicsShapeQueryParameters2D.new()
@@ -73,10 +80,13 @@ func check_enemy_collision() -> void:
 		if collider.is_in_group("enemies"):
 			die()
 			return
+
+# Return to the main menu on death. Will be switched out for a game over
+# screen when the time comes. 
 func die():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GUI/main_menu.tscn")
 
-
+# Test function that is just code bloat
 func _on_tree_exited() -> void:
 	print("Die")
 	
