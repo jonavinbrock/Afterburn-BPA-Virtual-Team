@@ -2,6 +2,13 @@ extends Node2D
 
 func _ready() -> void:
 	get_tree().paused = false
+	
+	var file = FileAccess.open("res://Data/data.json", FileAccess.READ)
+	var data = JSON.parse_string(file.get_as_text())
+	file.close()
+	
+	find_child("Highscore").text = "High Score: " + str(int(data["High Score"]))
+	
 
 # Press play to start the main scene
 func _on_play_pressed() -> void:

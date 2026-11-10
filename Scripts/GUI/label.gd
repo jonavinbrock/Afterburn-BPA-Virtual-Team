@@ -19,3 +19,4 @@ func add_points(amount):
 	
 func update_points():
 	text = "Points: %d" % points
+	GlobalAtributes.points = points

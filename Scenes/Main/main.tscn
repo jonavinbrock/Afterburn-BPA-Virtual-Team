@@ -10,7 +10,7 @@
 [node name="Node2D" type="Node2D" unique_id=1006425991]
 script = ExtResource("1_qw60k")
 
-[node name="Control" parent="." unique_id=794162153 instance=ExtResource("5_p6jpk")]
+[node name="Score" parent="." unique_id=794162153 instance=ExtResource("5_p6jpk")]
 offset_left = -115.0
 offset_top = -40.999996
 offset_right = -115.0

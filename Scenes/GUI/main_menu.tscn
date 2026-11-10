@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://denx8sj78nk81" path="res://Scripts/GUI/main_menu.gd" id="1_gv7mq"]
 [ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_sar4h"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_aol0e"]
+font = ExtResource("2_sar4h")
+font_size = 24
+
 [node name="Main Menu" type="Node2D" unique_id=1449988407]
 script = ExtResource("1_gv7mq")
 
@@ -16,8 +20,7 @@ offset_left = 161.0
 offset_top = 97.0
 offset_right = 1011.0
 offset_bottom = 171.0
-theme_override_colors/font_color = Color(1, 0.41960785, 0.7294118, 1)
-theme_override_colors/font_outline_color = Color(0.6108037, 0.13864732, 0.42537886, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 14
 theme_override_fonts/font = ExtResource("2_sar4h")
@@ -25,6 +28,15 @@ theme_override_font_sizes/font_size = 50
 text = "A F T E R B U R N"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Highscore" type="Label" parent="." unique_id=1547622079]
+offset_left = 5.0
+offset_top = 603.0
+offset_right = 1140.0
+offset_bottom = 638.0
+text = "High Score: "
+label_settings = SubResource("LabelSettings_aol0e")
+horizontal_alignment = 2
 
 [node name="Button Manager" type="Control" parent="." unique_id=1450567671]
 layout_mode = 3
@@ -34,32 +46,21 @@ offset_bottom = 40.0
 
 [node name="Play" type="Button" parent="Button Manager" unique_id=1749363530]
 layout_mode = 0
-offset_left = 364.0
-offset_top = 191.0
-offset_right = 772.0
-offset_bottom = 282.0
+offset_left = 381.0
+offset_top = 183.0
+offset_right = 789.0
+offset_bottom = 274.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_sar4h")
 theme_override_font_sizes/font_size = 40
 text = "START GAME"
 
-[node name="Unlocks" type="Button" parent="Button Manager" unique_id=467100872]
-layout_mode = 0
-offset_left = 363.0
-offset_top = 297.0
-offset_right = 771.0
-offset_bottom = 388.0
-theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_sar4h")
-theme_override_font_sizes/font_size = 40
-text = "UNLOCKS"
-
 [node name="Settings" type="Button" parent="Button Manager" unique_id=512490586]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 403.0
-offset_right = 768.0
-offset_bottom = 494.0
+offset_left = 381.0
+offset_top = 304.0
+offset_right = 789.0
+offset_bottom = 395.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_sar4h")
 theme_override_font_sizes/font_size = 40
@@ -67,16 +68,15 @@ text = "SETTINGS"
 
 [node name="Exit" type="Button" parent="Button Manager" unique_id=793991352]
 layout_mode = 0
-offset_left = 364.0
-offset_top = 513.0
-offset_right = 767.0
-offset_bottom = 604.0
+offset_left = 382.0
+offset_top = 412.0
+offset_right = 785.0
+offset_bottom = 503.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_sar4h")
 theme_override_font_sizes/font_size = 40
 text = "EXIT GAME"
 
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Button Manager/Unlocks" to="." method="_on_uncloks_pressed"]
 [connection signal="pressed" from="Button Manager/Settings" to="." method="_on_setings_pressed"]
 [connection signal="pressed" from="Button Manager/Exit" to="." method="_on_exit_pressed"]

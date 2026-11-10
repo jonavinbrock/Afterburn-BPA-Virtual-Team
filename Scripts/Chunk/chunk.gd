@@ -12,6 +12,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
 	time += delta
 	if time > TIME_PERIOD:
 		emit_signal("timeout")

@@ -84,6 +84,34 @@ func check_enemy_collision() -> void:
 # Return to the main menu on death. Will be switched out for a game over
 # screen when the time comes. 
 func die():
+	# Open file as READ, important that you only do it as READ.
+	var file = FileAccess.open("res://Data/data.json", FileAccess.READ)
+	# Turns the file into a proper dictionary to be edited.
+	var data = JSON.parse_string(file.get_as_text())
+	# !!!ALWAYS close a file after you're done reading/writing it.
+	file.close()
+	
+	if (GlobalAtributes.points > data["High Score"]):
+		
+		# Edit the data so we can store the high score.
+		data["High Score"] = GlobalAtributes.points
+		
+		
+		
+		# Save the now edited data as a string,
+		var string = JSON.stringify(data, "\t")
+		
+		# Re-open the file as WRITE so that we can edit it.
+		file = FileAccess.open("res://Data/data.json", FileAccess.WRITE)
+		# Now that we can edit it, we replace the information with the string version
+		# of the edited data.
+		file.store_string(string)
+		# !!!ALWAYS close a file after you're done reading/writing it.
+		file.close()
+	
+	# var data = JSON.parse_string(file.get_as_text())
+	# print(data["High Score"])
+	print(GlobalAtributes.points)
 	get_tree().change_scene_to_file("res://Scenes/GUI/main_menu.tscn")
 
 # Test function that is just code bloat
