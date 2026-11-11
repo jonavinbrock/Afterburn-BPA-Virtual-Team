@@ -1,10 +1,6 @@
 extends AudioStreamPlayer2D
 
+signal player_state_changed(new_value: float)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var audio_player = AudioStreamPlayer.new()
-	add_child(audio_player)
-	audio_player.stream = load("res://Scripts/870940__innov8_music__retro-house-loop-130bpm-8bars-dmin-korg-m1-roland-909.wav")
-	audio_player.loop = true
-	audio_player.play()
+func _on_media_player_state_changed():
+	emit_signal("player_state_changed", $MediaPlayer.value)

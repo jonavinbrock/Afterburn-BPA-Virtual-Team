@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://chruo7ipr6blb"]
+
+[ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="1_0jr5w"]
+[ext_resource type="Script" uid="uid://bsfaip0ynf5c3" path="res://Scenes/GUI/settings.gd" id="1_dvir7"]
+[ext_resource type="Script" uid="uid://b73exe5oc4bjy" path="res://Scenes/GUI/music_vol.gd" id="3_y8w1m"]
+
+[node name="Settings" type="Control" unique_id=554679662]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dvir7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=761204358]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 639.0
+color = Color(0.10980392, 0.007843138, 0.007843138, 1)
+
+[node name="Settings Label" type="Label" parent="." unique_id=1854524397]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 69.0
+offset_right = 765.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("1_0jr5w")
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+
+[node name="SettingControls" type="Control" parent="." unique_id=1170275891]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicVol" type="HSlider" parent="SettingControls" unique_id=764091157]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 214.0
+offset_right = 758.0
+offset_bottom = 260.0
+value = 100.0
+scrollable = false
+tick_count = 5
+ticks_position = 2
+script = ExtResource("3_y8w1m")
+
+[node name="Music" type="Label" parent="SettingControls/MusicVol" unique_id=478584585]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -32.0
+offset_right = 68.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("1_0jr5w")
+text = "MUSIC: 100%"
+
+[node name="SoundVol" type="HSlider" parent="SettingControls" unique_id=520960581]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 308.0
+offset_right = 759.0
+offset_bottom = 354.0
+value = 100.0
+scrollable = false
+tick_count = 5
+ticks_position = 2
+
+[node name="Sound" type="Label" parent="SettingControls/SoundVol" unique_id=1386173131]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -32.0
+offset_right = 68.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("1_0jr5w")
+text = "SOUNDS: 100%"
+
+[node name="Button" type="Button" parent="SettingControls" unique_id=6708860]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 409.0
+offset_right = 724.0
+offset_bottom = 440.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("1_0jr5w")
+theme_override_font_sizes/font_size = 20
+text = "RESET HIGHSCORE"

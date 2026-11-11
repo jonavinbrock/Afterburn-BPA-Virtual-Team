@@ -54,9 +54,9 @@ offset_bottom = 40.0
 [node name="Play" type="Button" parent="Button Manager" unique_id=1749363530]
 layout_mode = 0
 offset_left = 381.0
-offset_top = 183.0
+offset_top = 217.0
 offset_right = 789.0
-offset_bottom = 274.0
+offset_bottom = 308.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_sar4h")
 theme_override_font_sizes/font_size = 40
@@ -75,15 +75,27 @@ text = "SETTINGS"
 
 [node name="Exit" type="Button" parent="Button Manager" unique_id=793991352]
 layout_mode = 0
-offset_left = 382.0
-offset_top = 412.0
-offset_right = 785.0
-offset_bottom = 503.0
+offset_left = 384.0
+offset_top = 478.0
+offset_right = 787.0
+offset_bottom = 569.0
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_sar4h")
 theme_override_font_sizes/font_size = 40
 text = "EXIT GAME"
 
+[node name="Credits" type="Button" parent="Button Manager" unique_id=1057730787]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 389.0
+offset_right = 788.0
+offset_bottom = 480.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_sar4h")
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
+
 [connection signal="pressed" from="Button Manager/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Button Manager/Settings" to="." method="_on_setings_pressed"]
+[connection signal="pressed" from="Button Manager/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Button Manager/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Button Manager/Credits" to="." method="_on_credits_pressed"]
