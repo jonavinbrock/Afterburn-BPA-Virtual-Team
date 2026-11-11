@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://denx8sj78nk81" path="res://Scripts/GUI/main_menu.gd" id="1_gv7mq"]
 [ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="2_sar4h"]
+[ext_resource type="Script" uid="uid://eex0tg7yk3kc" path="res://Scenes/GUI/audio_stream_player_2d.gd" id="3_khfnj"]
+[ext_resource type="AudioStream" uid="uid://cqqcm4sgib30n" path="res://Scripts/870940__innov8_music__retro-house-loop-130bpm-8bars-dmin-korg-m1-roland-909.wav" id="4_mjh0x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_aol0e"]
 font = ExtResource("2_sar4h")
@@ -9,6 +11,11 @@ font_size = 24
 
 [node name="Main Menu" type="Node2D" unique_id=1449988407]
 script = ExtResource("1_gv7mq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=535049312]
+stream = ExtResource("4_mjh0x")
+autoplay = true
+script = ExtResource("3_khfnj")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=957019175]
 offset_right = 1147.0
