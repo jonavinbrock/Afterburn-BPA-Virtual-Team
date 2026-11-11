@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dqfxrhvvmvvt5"]
+
+[ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="1_nm7lk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6yky"]
+font_size = 45
+
+[node name="Credits" type="Node2D" unique_id=326735848]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1756022284]
+offset_right = 1148.0
+offset_bottom = 646.0
+color = Color(0.10980392, 0.007843138, 0.007843138, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1676538911]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Button" unique_id=1537674454]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1152.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("1_nm7lk")
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+label_settings = SubResource("LabelSettings_e6yky")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button" unique_id=190252816]
+layout_mode = 0
+offset_top = 69.0
+offset_right = 1149.0
+offset_bottom = 469.0
+theme_override_fonts/font = ExtResource("1_nm7lk")
+theme_override_font_sizes/font_size = 25
+text = "Jonavin
+Jameson
+Kristion
+Nick
+
+Retro House loop 130bpm8bars Dmin - Korg M1 -
+ Roland 909 by innov8_Music -- https://
+/ -- License: Attribution NonCommercial 4.0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Button" unique_id=1143490789]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 417.0
+offset_right = 707.0
+offset_bottom = 507.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("1_nm7lk")
+theme_override_font_sizes/font_size = 27
+text = "Main Menu"
