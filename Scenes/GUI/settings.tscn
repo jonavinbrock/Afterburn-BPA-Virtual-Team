@@ -2,7 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://btdgx4lr4y3es" path="res://Scripts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf" id="1_0jr5w"]
 [ext_resource type="Script" uid="uid://bsfaip0ynf5c3" path="res://Scenes/GUI/settings.gd" id="1_dvir7"]
-[ext_resource type="Script" uid="uid://b73exe5oc4bjy" path="res://Scenes/GUI/music_vol.gd" id="3_y8w1m"]
 
 [node name="Settings" type="Control" unique_id=554679662]
 layout_mode = 3
@@ -44,7 +43,6 @@ value = 100.0
 scrollable = false
 tick_count = 5
 ticks_position = 2
-script = ExtResource("3_y8w1m")
 
 [node name="Music" type="Label" parent="SettingControls/MusicVol" unique_id=478584585]
 layout_mode = 0
@@ -98,5 +96,6 @@ theme_override_fonts/font = ExtResource("1_0jr5w")
 theme_override_font_sizes/font_size = 40
 text = "BACK"
 
+[connection signal="value_changed" from="SettingControls/MusicVol" to="." method="_on_music_vol_value_changed"]
 [connection signal="pressed" from="SettingControls/Resetscore" to="." method="_on_resetscore_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

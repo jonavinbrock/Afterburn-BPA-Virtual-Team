@@ -7,6 +7,7 @@ class_name Player
 @export var moving: bool = false
 @onready var ray: RayCast2D = $RayCast2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var state_machine = $StateMachine
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
@@ -15,12 +16,33 @@ var inputs = {"up": Vector2.UP, "down": Vector2.DOWN}
 var max_negative_y = -32
 var max_positive_y = 32
 
+const StateMachine = preload("res://player_state.gd")
+
 func _ready() -> void:
 	z_index = 2
 	GlobalAtributes.player = self
 
 func _physics_process(delta: float) -> void:
-	# Godot's gravity bloat that I'm not removing - Jonavin
+	# Setup for the player state machine this is for the implementation of player
+	# movements while the game is running. Like if the player runs out of fuel, if
+	# the player is running, dashing, jumping, or sliding.
+	match state_machine.current_state:
+		state_machine.PlayerState.EMPTY:
+			pass # There is nothing for the crystal yet
+		
+		state_machine.PlayerState.RUNNING:
+			pass # The basic idle, if moving up and down, etc.
+			
+		state_machine.PlayerState.DASHING:
+			pass # Smash a drone, ez
+			
+		state_machine.PlayerState.JUMPING:
+			pass # Jump over cars + obstacles
+			
+		state_machine.PlayerState.SLIDING:
+			pass # Slide under obstacles
+	
+	# Camera thing
 	get_parent().find_child("Camera2D").position.x = self.position.x
 	if not is_on_floor():
 		velocity += get_gravity() * delta
