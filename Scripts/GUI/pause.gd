@@ -28,4 +28,4 @@ func _on_close_resume_pressed():
 	get_tree().paused = false
 
 func _on_return_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GUI/main_menu.tscn")

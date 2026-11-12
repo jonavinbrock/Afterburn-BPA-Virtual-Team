@@ -75,7 +75,7 @@ offset_bottom = -9.0
 theme_override_fonts/font = ExtResource("1_0jr5w")
 text = "SOUNDS: 100%"
 
-[node name="Button" type="Button" parent="SettingControls" unique_id=6708860]
+[node name="Resetscore" type="Button" parent="SettingControls" unique_id=6708860]
 layout_mode = 0
 offset_left = 416.0
 offset_top = 409.0
@@ -86,3 +86,17 @@ theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("1_0jr5w")
 theme_override_font_sizes/font_size = 20
 text = "RESET HIGHSCORE"
+
+[node name="Return" type="Button" parent="." unique_id=190527107]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 193.0
+offset_bottom = 103.0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("1_0jr5w")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+
+[connection signal="pressed" from="SettingControls/Resetscore" to="." method="_on_resetscore_pressed"]
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
