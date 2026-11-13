@@ -17,3 +17,7 @@ func _on_resetscore_pressed() -> void:
 
 func _on_return_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/GUI/main_menu.tscn")
+
+
+func _on_music_vol_value_changed(value: float) -> void:
+	pass # Replace with function body.
