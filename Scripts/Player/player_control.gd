@@ -7,6 +7,7 @@ class_name Player
 @export var moving: bool = false
 @onready var ray: RayCast2D = $RayCast2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var state_machine = $StateMachine
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
@@ -20,7 +21,7 @@ func _ready() -> void:
 	GlobalAtributes.player = self
 
 func _physics_process(delta: float) -> void:
-	# Godot's gravity bloat that I'm not removing - Jonavin
+	# Camera that sets itself equal to the player x pos
 	get_parent().find_child("Camera2D").position.x = self.position.x
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	# skating into the scene
 	position.x += scroll_speed * delta
 	check_enemy_collision()
-	scroll_speed += 0.05
+	scroll_speed += 0.001
 	
 # Function that handles input to move the player up or down
 func _unhandled_input(event: InputEvent) -> void:
