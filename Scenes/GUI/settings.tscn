@@ -14,6 +14,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dvir7")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=723420]
+stream = ExtResource("3_xcau2")
+autoplay = true
+script = ExtResource("4_awifx")
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=761204358]
 layout_mode = 0
 offset_right = 1151.0
@@ -97,11 +102,6 @@ theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("1_0jr5w")
 theme_override_font_sizes/font_size = 40
 text = "BACK"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=723420]
-stream = ExtResource("3_xcau2")
-autoplay = true
-script = ExtResource("4_awifx")
 
 [connection signal="value_changed" from="SettingControls/MusicVol" to="." method="_on_music_vol_value_changed"]
 [connection signal="pressed" from="SettingControls/Resetscore" to="." method="_on_resetscore_pressed"]
