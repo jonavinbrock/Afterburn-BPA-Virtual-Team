@@ -32,4 +32,4 @@ func _on_exit_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/GUI/credit.tscn")
+	get_tree().change_scene_to_file("res://Scenes/GUI/credits.tscn")

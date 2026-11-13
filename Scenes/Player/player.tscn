@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bgcto5m2e47xp"]
 
-[ext_resource type="Script" uid="uid://bvd5v8sucivef" path="res://player_state.gd" id="1_htcer"]
 [ext_resource type="Script" uid="uid://cfyud5wbj6mbi" path="res://Scripts/Player/player_control.gd" id="1_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://iosjw6ynjl2j" path="res://Assets/Player/player_1.png" id="2_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://bxbbw8sgiddmy" path="res://Assets/Player/Player-2.png.png" id="3_htcer"]
@@ -49,8 +48,5 @@ shape = SubResource("RectangleShape2D_aol0e")
 exclude_parent = false
 target_position = Vector2(0, 13)
 collide_with_bodies = false
-
-[node name="StateMachine" type="Node" parent="." unique_id=310471413]
-script = ExtResource("1_htcer")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
