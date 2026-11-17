@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+
+
 # Variables
 @export var scroll_speed: float = 125.0
 @export var animation_speed: float = 3.0
@@ -12,11 +14,13 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
 const JUMP_FORCE = -400
-
-var inputs = {"up": Vector2.UP, "down": Vector2.DOWN}
+const DASH = 800
+var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Dash": Vector2.RIGHT}
 var max_negative_y = -32
 var max_positive_y = 32
 var is_on_floor = false
+
+
 
 func _ready() -> void:
 	z_index = 2
@@ -33,9 +37,13 @@ func _physics_process(delta: float) -> void:
 	check_enemy_collision()
 	scroll_speed += 0.01
 	
-	is_on_floor = is_on_floor()
+	#is_on_floor = is_on_floor()
 	if is_on_floor and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_FORCE
+		
+		#is_on_floor = is_on_floor()
+	if is_on_floor and Input.is_action_just_pressed("Dash"):
+		velocity.x = DASH
 	
 func _process(delta: float) -> void:
 	move_and_slide()	
