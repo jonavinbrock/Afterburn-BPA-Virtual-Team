@@ -35,9 +35,6 @@ collision_layer = 67
 collision_mask = 2
 floor_constant_speed = true
 script = ExtResource("1_xpcdj")
-scroll_speed = null
-animation_speed = null
-moving = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1728813975]
 texture_filter = 1
@@ -52,7 +49,6 @@ shape = SubResource("RectangleShape2D_aol0e")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2078770373]
 exclude_parent = false
 target_position = Vector2(0, 13)
-collision_mask = 2
 collide_with_bodies = false
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

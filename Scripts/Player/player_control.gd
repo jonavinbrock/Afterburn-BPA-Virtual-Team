@@ -7,7 +7,6 @@ class_name Player
 @export var moving: bool = false
 @onready var ray: RayCast2D = $RayCast2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var state_machine = $StateMachine
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
@@ -33,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	check_enemy_collision()
 	scroll_speed += 0.01
 	
-	is_on_floor = is_on_floor()
+	#is_on_floor = is_on_floor()
 	if is_on_floor and Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_FORCE
 	
