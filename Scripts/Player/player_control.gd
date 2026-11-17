@@ -11,10 +11,12 @@ class_name Player
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
+const JUMP_FORCE = -400
 
 var inputs = {"up": Vector2.UP, "down": Vector2.DOWN}
 var max_negative_y = -32
 var max_positive_y = 32
+var is_on_floor = false
 
 func _ready() -> void:
 	z_index = 2
@@ -23,15 +25,20 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Camera that sets itself equal to the player x pos
 	get_parent().find_child("Camera2D").position.x = self.position.x
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		animated_sprite.play("Idle")
+	
 		
 	# Camera Scroll for the player to create the effect of the player
 	# skating into the scene
 	position.x += scroll_speed * delta
 	check_enemy_collision()
 	scroll_speed += 0.01
+	
+	is_on_floor = is_on_floor()
+	if is_on_floor and Input.is_action_just_pressed("jump"):
+		velocity.y = JUMP_FORCE
+	
+func _process(delta: float) -> void:
+	move_and_slide()	
 	
 # Function that handles input to move the player up or down
 func _unhandled_input(event: InputEvent) -> void:
@@ -46,6 +53,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func move(dir):
 	var movement = inputs[dir] * TILE_SIZE
 	var target_position = position + movement
+	
+	var top_sidewalk = -160
+	var bottom_sidewalk = 160
+	
+	#if target_position != target_position.clamp(Vector2(-160, -30), Vector2(160, 23)):
+		#return
 	
 	ray.target_position = inputs[dir] * TILE_SIZE
 	ray.force_raycast_update()

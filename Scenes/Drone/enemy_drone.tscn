@@ -42,6 +42,8 @@ animations = [{
 size = Vector2(7, 4)
 
 [node name="Drone" type="CharacterBody2D" unique_id=1130156932 groups=["enemies"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_vokb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999317623]
