@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	# skating into the scene
 	position.x += scroll_speed * delta
 	check_enemy_collision()
-	scroll_speed += 0.001
+	scroll_speed += 0.01
 	
 # Function that handles input to move the player up or down
 func _unhandled_input(event: InputEvent) -> void:
