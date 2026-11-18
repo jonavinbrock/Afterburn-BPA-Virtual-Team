@@ -48,16 +48,18 @@ script = ExtResource("1_vokb3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1999317623]
 texture_filter = 1
+position = Vector2(0, -1)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_e6yky")
 animation = &"Drone"
 frame_progress = 0.43905595
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538535951]
-position = Vector2(0.5, 0)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_aol0e")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1840312315]
+position = Vector2(0, -1)
 rect = Rect2(-5, -4, 10, 8)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

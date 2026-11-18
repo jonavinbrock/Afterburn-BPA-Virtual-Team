@@ -1,6 +1,7 @@
 extends Node2D
 
 const DRONE_SCENE = preload("res://Scenes/Drone/enemy_drone.tscn")
+const CRYSTAL_SCENE = preload("res://Assets/Crystal/crystal.tscn")
 @export_range(0, 100) var spawn_chance: int = 0
 
 # Spawn the enemy if the scrore is above the given int.
@@ -23,13 +24,19 @@ func spawn_enemy() -> void:
 		return
 
 	var enemy_parent = get_tree().current_scene
+	var crystal_parent = get_tree().current_scene
 	
 	if !enemy_parent:
 		return
 
 	var spawn_point: Marker2D = points.pick_random()
 	var drone = DRONE_SCENE.instantiate()
+	var crystal = CRYSTAL_SCENE.instantiate()
 
 	enemy_parent.add_child.call_deferred(drone)
-	drone.z_index =1
+	drone.z_index = 1
 	drone.global_position = spawn_point.global_position
+	
+	crystal_parent.add_child.call_deferred(crystal)
+	crystal.z_index = 1
+	crystal.global_position = spawn_point.global_position

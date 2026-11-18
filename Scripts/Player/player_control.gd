@@ -13,7 +13,8 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
 const JUMP_FORCE = -400
-const DASH = -10000
+const SLIDE = 400.0
+const DASH_SPEED = 888
 var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Slide": Vector2.RIGHT}
 var max_negative_y = -32
 var max_positive_y = 32
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		
 		#is_on_floor = is_on_floor()
 	if is_on_floor and Input.is_action_just_pressed("Dash"):
-		velocity.x = DASH
+		velocity.x = SLIDE
 	
 func _process(delta: float) -> void:
 	move_and_slide()	
