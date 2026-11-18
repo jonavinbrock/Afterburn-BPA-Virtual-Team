@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dwohlkixykyc7"]
+
+[ext_resource type="Texture2D" uid="uid://b3hr5jr4ffu1u" path="res://Assets/Cars/Smol Car-1.png.png" id="1_b1wlr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r827p"]
+size = Vector2(22, 18)
+
+[node name="BlackSmallCar" type="CharacterBody2D" unique_id=1124963051]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1612994640]
+texture_filter = 1
+texture = ExtResource("1_b1wlr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313277172]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_r827p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=495085950]
+position = Vector2(0, -4)
+rect = Rect2(-12, -10, 24, 20)
