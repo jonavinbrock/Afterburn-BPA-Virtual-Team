@@ -17,7 +17,7 @@ func _ready() -> void:
 	if GlobalAtributes.score < 100:
 		spawn_enemy()
 
-# Function to spawn the enemy using arrays and spawn points. 
+# Function to spawn the enemy using arrays and                                                                                                                                              spawn points. 
 func spawn_enemy() -> void:
 	if randi_range(0,200) > spawn_chance:
 		return
@@ -59,27 +59,27 @@ func spawn_enemy() -> void:
 	crystal.z_index = 1
 	crystal.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(green_car)
+	green_car.z_index = 1
+	green_car.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(purple_car)
+	purple_car.z_index = 1
+	purple_car.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(pink_car)
+	pink_car.z_index = 1
+	pink_car.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(black_car)
+	black_car.z_index = 1
+	black_car.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(red_car)
+	red_car.z_index = 1
+	red_car.global_position = spawn_point.global_position
 	
-	crystal_parent.add_child.call_deferred(crystal)
-	crystal.z_index = 1
-	crystal.global_position = spawn_point.global_position
+	car_parent.add_child.call_deferred(yellow_car)
+	yellow_car.z_index = 1
+	yellow_car.global_position = spawn_point.global_position
 	
