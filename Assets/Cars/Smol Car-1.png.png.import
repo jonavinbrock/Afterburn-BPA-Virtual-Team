@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbmmobq3pwtax"
-path="res://.godot/imported/Crystel-1.png.png-451eca987e5a5eec5a5175c8a768f8e1.ctex"
+uid="uid://b3hr5jr4ffu1u"
+path="res://.godot/imported/Smol Car-1.png.png-9d52fd06c458980b04d95d36ffa0c9da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crystel-1.png.png"
-dest_files=["res://.godot/imported/Crystel-1.png.png-451eca987e5a5eec5a5175c8a768f8e1.ctex"]
+source_file="res://Assets/Cars/Smol Car-1.png.png"
+dest_files=["res://.godot/imported/Smol Car-1.png.png-9d52fd06c458980b04d95d36ffa0c9da.ctex"]
 
 [params]
 

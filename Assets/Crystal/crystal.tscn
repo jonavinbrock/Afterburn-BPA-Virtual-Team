@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bt51nh8yuy72c"]
+
+[ext_resource type="Script" uid="uid://j6e1vytjdq70" path="res://Scripts/Crystal/crystal.gd" id="1_1v55s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w3bgc"]
+load_path = "res://.godot/imported/Crystel-1.png.png-451eca987e5a5eec5a5175c8a768f8e1.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wivt8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_w3bgc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_200vn"]
+size = Vector2(13, 20)
+
+[node name="Crystal" type="CharacterBody2D" unique_id=1415218769 groups=["enemies"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1v55s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1577830761]
+texture_filter = 1
+position = Vector2(-5.04871e-29, -4)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_wivt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=183399104]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_200vn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=85228412]
+position = Vector2(0, -4)
+rect = Rect2(-6, -10, 13, 20)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

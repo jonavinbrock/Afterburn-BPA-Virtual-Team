@@ -26,7 +26,9 @@ scale = Vector2(1.25, 2)
 transform = Transform2D(1.25, 0, 0, 2, 310, 50)
 
 [node name="Player" parent="." unique_id=757944653 instance=ExtResource("3_p6jpk")]
-position = Vector2(11, 0)
+position = Vector2(11, 1)
+motion_mode = 1
+scroll_speed = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1613963224]
 texture_filter = 1

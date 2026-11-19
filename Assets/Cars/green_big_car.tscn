@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://1g4cb0bd5sfj"]
+
+[ext_resource type="Texture2D" uid="uid://c6r4281k8ngfh" path="res://Assets/Cars/big car-1.png.png" id="1_2cfrv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r827p"]
+size = Vector2(22, 18)
+
+[node name="GreenBigCar" type="CharacterBody2D" unique_id=1745631336]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=446966022]
+texture_filter = 1
+texture = ExtResource("1_2cfrv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=78433694]
+texture_filter = 1
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_r827p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=730200083]
+texture_filter = 1
+position = Vector2(0, -4)
+rect = Rect2(-12, -10, 24, 20)
