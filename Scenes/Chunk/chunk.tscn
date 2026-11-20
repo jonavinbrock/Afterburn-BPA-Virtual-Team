@@ -58,7 +58,9 @@ script = ExtResource("1_rn3ng")
 
 [node name="Spawns" type="Node2D" parent="." unique_id=1646830333]
 script = ExtResource("3_nf13t")
-spawn_chance = 15
+drone_chance = 48
+car_chance = 48
+crystal_chance = 1
 
 [node name="DroneSpawn" type="Marker2D" parent="Spawns" unique_id=703062819]
 position = Vector2(60, -5)
