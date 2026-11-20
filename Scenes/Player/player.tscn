@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bxbbw8sgiddmy" path="res://Assets/Player/Player-2.png.png" id="3_htcer"]
 [ext_resource type="Texture2D" uid="uid://c7j67gx12bs1y" path="res://Assets/Player/Player-3.png.png" id="4_dd0ac"]
 [ext_resource type="Texture2D" uid="uid://dccfl40bj07cf" path="res://Assets/Player/Player-4.png.png" id="5_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://cakecfmknxu4" path="res://Assets/Player/download (3) (1).png" id="6_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://0nh20oqrk5ji" path="res://Assets/Player/download (4) (1).png" id="7_jhyir"]
+[ext_resource type="Texture2D" uid="uid://jhxunur6b1o" path="res://Assets/Player/download (5) (1).png" id="8_74mp2"]
+[ext_resource type="Texture2D" uid="uid://dl0aibv5bgn5b" path="res://Assets/Player/download (6) (1).png" id="9_oikmp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e6yky"]
 animations = [{
@@ -24,6 +28,23 @@ animations = [{
 "loop": 1,
 "name": &"Idle",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gk6dx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jhyir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_74mp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oikmp")
+}],
+"loop": 1,
+"name": &"Jump",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aol0e"]
@@ -39,8 +60,9 @@ script = ExtResource("1_xpcdj")
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_e6yky")
-animation = &"Idle"
+animation = &"Jump"
 autoplay = "Idle"
+frame_progress = 0.3877716
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=356113335]
