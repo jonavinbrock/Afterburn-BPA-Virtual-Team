@@ -139,4 +139,3 @@ func die():
 func _on_tree_exited() -> void:
 	print("Die")
 	
-# jameson cant code btw
