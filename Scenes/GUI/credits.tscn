@@ -46,9 +46,7 @@ offset_bottom = 217.0
 theme_override_fonts/font = ExtResource("2_qwqyw")
 theme_override_font_sizes/font_size = 25
 text = "Jonavin
-Jameson
-Kristion
-Nick"
+Jameson"
 horizontal_alignment = 1
 vertical_alignment = 1
 

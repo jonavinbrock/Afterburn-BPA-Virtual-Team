@@ -3,22 +3,24 @@
 [ext_resource type="Script" uid="uid://cqa0ebdj41im0" path="res://Assets/Cars/pink_big_car.gd" id="1_d0vnc"]
 [ext_resource type="Texture2D" uid="uid://cmjewwumgk6nl" path="res://Assets/Cars/big car-3.png.png" id="1_onol0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r827p"]
-size = Vector2(22, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0vnc"]
+size = Vector2(22, 4)
 
 [node name="PinkBigCar" type="CharacterBody2D" unique_id=1374151021 groups=["enemies"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_d0vnc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228190421]
 texture_filter = 1
 texture = ExtResource("1_onol0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814849085]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_r827p")
-
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=185213413]
 position = Vector2(0, -4)
 rect = Rect2(-12, -10, 24, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1107951291]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_d0vnc")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

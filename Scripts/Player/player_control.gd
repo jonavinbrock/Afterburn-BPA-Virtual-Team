@@ -5,83 +5,95 @@ class_name Player
 
 # Variables
 @export var scroll_speed: float = 125.0
-@export var animation_speed: float = 3.0
-@export var moving: bool = false
-@onready var ray: RayCast2D = $RayCast2D
+@export var scroll_acceleration: float = 0.6
+@export var lane_speed: float = 200.0
+@export var dash_speed: float = 400.0
+@export var dash_time: float = 0.15
+
+var TILE_SIZE = 12
+var MIN_Y = -32
+var MAX_Y = 32
+
 @onready var animated_sprite = $AnimatedSprite2D
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const TILE_SIZE = 12
-const JUMP_FORCE = -400
-const DASH = 10000
-var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Slide": Vector2.RIGHT}
-var max_negative_y = -32
-var max_positive_y = 32
-var is_on_floor = false
 
-
+var target_y: float
+var dash_timer: float = 0.0
 
 func _ready() -> void:
 	z_index = 2
+	target_y = position.y
 	GlobalAtributes.player = self
 
 func _physics_process(delta: float) -> void:
+	scroll_speed += scroll_acceleration * delta
+	
 	# Camera that sets itself equal to the player x pos
 	get_parent().find_child("Camera2D").position.x = self.position.x
 	
-		
-	# Camera Scroll for the player to create the effect of the player
-	# skating into the scene
-	position.x += scroll_speed * delta
+	velocity.x = scroll_speed
+	if dash_timer > 0.0:
+		dash_timer -= delta
+		velocity.x += dash_speed
+	elif Input.is_action_just_pressed("Dash"):
+		dash_timer = dash_time
+
+	var diff := target_y - position.y
+	velocity.y = clampf(diff / delta, -lane_speed, lane_speed)
+
+	move_and_slide()
+
+	for i in get_slide_collision_count():
+		var normal := get_slide_collision(i).get_normal()
+		if absf(normal.y) > 0.5:
+			target_y = position.y
+
 	check_enemy_collision()
-	scroll_speed += 0.01
-	
-	#is_on_floor = is_on_floor()
-	if is_on_floor and Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP_FORCE
-		
-		#is_on_floor = is_on_floor()
-	if is_on_floor and Input.is_action_just_pressed("Dash"):
-		velocity.x = DASH
 	
 func _process(delta: float) -> void:
 	move_and_slide()	
 	
 # Function that handles input to move the player up or down
 func _unhandled_input(event: InputEvent) -> void:
-	if moving:
-		return
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(dir)
+	if event.is_action_pressed("up"):
+		change_lane(-1)
+	elif event.is_action_pressed("down"):
+		change_lane(1)
 
+func change_lane(dir: int) -> void:
+	var new_y: float = target_y + dir * TILE_SIZE
+	if new_y < MIN_Y or new_y > MAX_Y:
+		return
+	if test_move(global_transform, Vector2(0, dir * TILE_SIZE)):
+		return
+	target_y = new_y
+	
 # Function that handles how far the player moves up and down.
 # This allows you to move to one lane instead of slowly moving up.
-func move(dir):
-	var movement = inputs[dir] * TILE_SIZE
-	var target_position = position + movement
-	
-	var top_sidewalk = -160
-	var bottom_sidewalk = 160
-	
-	#if target_position != target_position.clamp(Vector2(-160, -30), Vector2(160, 23)):
+#func move(dir):
+	#var movement = inputs[dir] * TILE_SIZE
+	#var target_position = position + movement
+	#
+	#var top_sidewalk = -160
+	#var bottom_sidewalk = 160
+	#
+	##if target_position != target_position.clamp(Vector2(-160, -30), Vector2(160, 23)):
+		##return
+	#
+	#ray.target_position = inputs[dir] * TILE_SIZE
+	#ray.force_raycast_update()
+	#
+	#if !ray.is_colliding():
+		#var tween = create_tween()
+		#tween.tween_property(self, "position",
+			#position + inputs[dir] * TILE_SIZE, 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
+		#moving = true
+		#await tween.finished
+		#moving = false
+		#
+	#if target_position.y <= max_positive_y:
 		#return
-	
-	ray.target_position = inputs[dir] * TILE_SIZE
-	ray.force_raycast_update()
-	
-	if !ray.is_colliding():
-		var tween = create_tween()
-		tween.tween_property(self, "position",
-			position + inputs[dir] * TILE_SIZE, 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
-		moving = true
-		await tween.finished
-		moving = false
-		
-	if target_position.y <= max_positive_y:
-		return
-	if target_position.y >= max_negative_y:
-		return
+	#if target_position.y >= max_negative_y:
+		#return
 
 # Collision check for enemies, obstacles, etc.
 func check_enemy_collision() -> void:

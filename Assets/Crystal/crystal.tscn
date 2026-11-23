@@ -37,6 +37,6 @@ shape = SubResource("RectangleShape2D_200vn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=85228412]
 position = Vector2(0, -4)
-rect = Rect2(-6, -10, 13, 20)
+rect = Rect2(-6, -8, 13, 18)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

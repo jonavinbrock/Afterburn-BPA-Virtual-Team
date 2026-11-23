@@ -1,0 +1,92 @@
+[gd_scene format=4 uid="uid://c2xe2p0tu2uvk"]
+
+[ext_resource type="Script" uid="uid://ks6k3741lgab" path="res://Scripts/Chunk/chunk.gd" id="1_rn3ng"]
+[ext_resource type="Texture2D" uid="uid://2p1snfkphk74" path="res://Assets/Tiles/new-road.png" id="2_nf13t"]
+[ext_resource type="Script" uid="uid://cddqamjc41707" path="res://Scripts/Chunk/spawns.gd" id="3_nf13t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hxllu"]
+texture = ExtResource("2_nf13t")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, -8, 0.17985916)
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, -8, 0.17985916)
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, -8, 0.17985916)
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.17985916, -8, 0.17985916)
+0:1/0 = 0
+0:1/0/terrain_set = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.17985916, 8, 0.17985916, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.17985916, 8, 0.17985916, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.17985916, 8, 0.17985916, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.17985916, 8, 0.17985916, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_v7nse"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+terrain_set_0/mode = 2
+sources/0 = SubResource("TileSetAtlasSource_hxllu")
+
+[node name="Chunk" type="Node2D" unique_id=9433945]
+script = ExtResource("1_rn3ng")
+
+[node name="Spawns" type="Node2D" parent="." unique_id=1646830333]
+script = ExtResource("3_nf13t")
+drone_chance = 20
+car_chance = 79
+crystal_chance = 1
+
+[node name="DroneSpawn" type="Marker2D" parent="Spawns" unique_id=703062819]
+position = Vector2(60, -5)
+
+[node name="DroneSpawn2" type="Marker2D" parent="Spawns" unique_id=244092928]
+position = Vector2(60, 7)
+
+[node name="DroneSpawn3" type="Marker2D" parent="Spawns" unique_id=815674448]
+position = Vector2(60, 19)
+
+[node name="DroneSpawn4" type="Marker2D" parent="Spawns" unique_id=811331630]
+position = Vector2(60, -17)
+
+[node name="Timer" type="Timer" parent="Spawns" unique_id=2032103714]
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1048950064]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=659638342]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAP7/AAAAAAAAAAAAAP//AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAABAP7/AAABAAAAAAABAP//AAABAAEAAAABAAAAAAABAAIAAAABAAEAAAABAAMAAAACAP7/AAACAAAAAAACAP//AAACAAEAAAACAAAAAAACAAIAAAACAAEAAAACAAMAAAADAP7/AAADAAAAAAADAP//AAADAAEAAAADAAAAAAADAAIAAAADAAEAAAADAAMAAAA=")
+tile_set = SubResource("TileSet_v7nse")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Node2D" unique_id=544712559]
+position = Vector2(10, -1)
+rect = Rect2(-10, -31, 64, 64)
+
+[connection signal="timeout" from="Spawns/Timer" to="Spawns" method="_on_timer_timeout"]
+[connection signal="screen_exited" from="Node2D/VisibleOnScreenNotifier2D" to="." method="_not_visible"]

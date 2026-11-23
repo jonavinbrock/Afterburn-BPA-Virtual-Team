@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://ce68ky7rsrvaw" path="res://Assets/Cars/Smol Car-3.png.png" id="1_gp5ci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r827p"]
-size = Vector2(22, 18)
+size = Vector2(22, 4)
 
 [node name="YellowSmallCar" type="CharacterBody2D" unique_id=1124963051]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_55ksp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1612994640]
@@ -14,7 +16,7 @@ texture_filter = 1
 texture = ExtResource("1_gp5ci")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1313277172]
-position = Vector2(0, -4)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_r827p")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=495085950 groups=["enemies"]]
