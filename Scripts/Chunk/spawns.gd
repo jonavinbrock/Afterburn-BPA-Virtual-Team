@@ -13,9 +13,9 @@ const CAR_SCENES: Array[PackedScene] = [
 ]
 
 @export_group("Spawn Chances")
-@export_range(0, 100) var drone_chance: int = 50
-@export_range(0, 100) var car_chance: int = 20
-@export_range(0, 100) var crystal_chance: int = 30
+@export_range(0, 100) var drone_chance: int = 15
+@export_range(0, 100) var car_chance: int = 30
+@export_range(0, 100) var crystal_chance: int = 5
 
 # Spawn the enemy if the scrore is above the given int.
 func _ready() -> void:
@@ -36,38 +36,31 @@ func spawn_enemy() -> void:
 	if points.is_empty():
 		return
 
-	var enemy_parent = get_tree().current_scene
-	var crystal_parent = get_tree().current_scene
-	var car_parent = get_tree().current_scene
 	var parent_node = get_tree().current_scene
 	
-	if !enemy_parent:
+	if !parent_node:
 		return
 	
+	if randi_range(1, 100) <= crystal_chance:
+		spawn_object(CRYSTAL_SCENE, points, parent_node)
 	
-	var total_weight: int = drone_chance + crystal_chance + car_chance
-	if total_weight <= 0:
-		return
-	
-	
-	var roll_spawn: int = randi_range(1, total_weight)
-	var scene_to_spawn: PackedScene = null
+	if randi_range(1, 100) <= car_chance:
+		var random_car: PackedScene = CAR_SCENES.pick_random()
+		spawn_object(random_car, points, parent_node)
 
-
-	if roll_spawn <= drone_chance:
-		scene_to_spawn = DRONE_SCENE
-	elif roll_spawn <= drone_chance + crystal_chance:
-		scene_to_spawn = CRYSTAL_SCENE
-	else:
-		# Pick one random car color from the array
-		scene_to_spawn = CAR_SCENES.pick_random()
-	
-	# If there is a scene to spawn, set the spawn point
-	# and instance and add it to the current scene (being the main game)
-	if scene_to_spawn:
-		var spawn_point: Marker2D = points.pick_random()
-		var instance = scene_to_spawn.instantiate()
+	if randi_range(1, 100) <= drone_chance:
+		spawn_object(DRONE_SCENE, points, parent_node)
 		
-		parent_node.add_child.call_deferred(instance)
-		instance.z_index = 1
-		instance.global_position = spawn_point.global_position
+func spawn_object(scene: PackedScene, points: Array[Marker2D], parent_node: Node) -> void:
+	if points.size() == 0:
+		return
+
+	var random_index = randi_range(0, points.size() - 1)
+	var spawn_point: Marker2D = points[random_index]
+
+	points.remove_at(random_index)
+
+	var instance = scene.instantiate()
+	parent_node.add_child(instance)
+	instance.global_position = spawn_point.global_position
+	instance.z_index = 1
