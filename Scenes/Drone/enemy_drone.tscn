@@ -12,7 +12,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_e6yky"]
 animations = [{
 "frames": [{
-"duration": 2.2,
+"duration": 1.0,
 "texture": ExtResource("2_acfar")
 }, {
 "duration": 1.0,
@@ -52,7 +52,7 @@ position = Vector2(0, -1)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_e6yky")
 animation = &"Drone"
-frame_progress = 0.43905595
+frame_progress = 0.034781586
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=538535951]
 position = Vector2(0, -1)
