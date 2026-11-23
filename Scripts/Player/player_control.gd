@@ -19,7 +19,7 @@ var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Slide": Vector2.RIGHT, "D
 var max_negative_y = -32
 var max_positive_y = 32
 var is_on_floor = false
-
+#hhujhgbhjghgb
 
 
 func _ready() -> void:
