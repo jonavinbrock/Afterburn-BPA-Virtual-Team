@@ -15,7 +15,14 @@ const DASH = -10000
 const Slide = 10000
 var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Slide": Vector2.RIGHT, "Dash": Vector2.RIGHT,"Jump": Vector2.UP}
 var max_negative_y = -32
+<<<<<<< HEAD
 var max_positive_y = 24
+=======
+var max_positive_y = 32
+var is_on_floor = false
+#hhujhgbhjghgb
+
+>>>>>>> parent of 636030f (mk)
 
 func _ready() -> void:
 	z_index = 2
