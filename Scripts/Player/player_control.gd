@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+
+
 # Variables
 @export var scroll_speed: float = 125.0
 @export var animation_speed: float = 3.0
@@ -11,37 +13,40 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const TILE_SIZE = 12
 const JUMP_FORCE = -400
-const DASH = -10000
+const DASH = 10000
 const Slide = 10000
 var inputs = {"up": Vector2.UP, "down": Vector2.DOWN, "Slide": Vector2.RIGHT, "Dash": Vector2.RIGHT,"Jump": Vector2.UP}
 var max_negative_y = -32
-var max_positive_y = 24
+var max_positive_y = 32
+var is_on_floor = false
+
+
 
 func _ready() -> void:
 	z_index = 2
 	GlobalAtributes.player = self
 
 func _physics_process(delta: float) -> void:
-	# Camera follows player
-	get_parent().find_child("Camera2D").position.x = position.x
+	# Camera that sets itself equal to the player x pos
+	get_parent().find_child("Camera2D").position.x = self.position.x
 	
+		
+	# Camera Scroll for the player to create the effect of the player
+	# skating into the scene
 	position.x += scroll_speed * delta
-	scroll_speed += 0.01
-
-	# Jump
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP_FORCE
-
-	# Dash
-	if is_on_floor() and Input.is_action_just_pressed("Dash"):
-		velocity.x = 0
-
-	# Slide
-	if is_on_floor() and Input.is_action_just_pressed("Slide"):
-		velocity.x = 0
-
-	move_and_slide()
 	check_enemy_collision()
+	scroll_speed += 0.01
+	
+	#is_on_floor = is_on_floor()
+	if is_on_floor and Input.is_action_just_pressed("jump"):
+		velocity.y = JUMP_FORCE
+		
+		#is_on_floor = is_on_floor()
+	if is_on_floor and Input.is_action_just_pressed("Dash"):
+		velocity.x = DASH
+		
+	if is_on_floor and Input.is_action_just_pressed("Slide"):
+		velocity.x = Slide
 	
 func _process(delta: float) -> void:
 	move_and_slide()	
@@ -71,16 +76,16 @@ func move(dir):
 	
 	if !ray.is_colliding():
 		var tween = create_tween()
-		if target_position.y >= max_positive_y:
-			return
-		if target_position.y <= max_negative_y:
-			return
-		tween.tween_property(self, "position:y", position.y + inputs[dir].y * TILE_SIZE, 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
-
+		tween.tween_property(self, "position",
+			position + inputs[dir] * TILE_SIZE, 1.0 / animation_speed).set_trans(Tween.TRANS_SINE)
 		moving = true
 		await tween.finished
 		moving = false
 		
+	if target_position.y <= max_positive_y:
+		return
+	if target_position.y >= max_negative_y:
+		return
 
 # Collision check for enemies, obstacles, etc.
 func check_enemy_collision() -> void:
@@ -96,7 +101,6 @@ func check_enemy_collision() -> void:
 
 	for result in collisions:
 		var collider = result["collider"]
-		print("Hit object: ", collider.name)
 
 		if collider.is_in_group("enemies"):
 			die()
