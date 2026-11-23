@@ -52,7 +52,7 @@ size = Vector2(5, 8)
 
 [node name="Player" type="CharacterBody2D" unique_id=757944653]
 top_level = true
-collision_layer = 2
+collision_layer = 67
 collision_mask = 2
 script = ExtResource("1_xpcdj")
 
